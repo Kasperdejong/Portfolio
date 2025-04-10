@@ -1,0 +1,378 @@
+{
+  "basics": {
+    "name": "Kasper de Jong",
+    "headline": "Creative Developer",
+    "email": "kasperdejong@gmail.com",
+    "phone": "+31624467681",
+    "location": "Rotterdam, Zuid-Holland",
+    "url": {
+      "label": "",
+      "href": ""
+    },
+    "customFields": [],
+    "picture": {
+      "url": "https://storage.rxresu.me/cm7ujzpx53xxc1492tukbabfb/pictures/g5trrqfpswkyr90ou5os6zuk.jpg",
+      "size": 64,
+      "aspectRatio": 1,
+      "borderRadius": 0,
+      "effects": {
+        "hidden": false,
+        "border": false,
+        "grayscale": false
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "name": "Summary",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "summary",
+      "content": "<p>Ik ben een student aan de Hogeschool Rotterdam. De opleiding die ik doe is CMGT, Creative Media &amp; Game Technologies. En ik zoek banen, waarin ik mijn creativiteit kan uiten en een waardevolle bijdrage kan leveren. Ik heb ervaring met HTML/CSS, PHP, Javascript, Laravel en Fullstack web development.</p>"
+    },
+    "awards": {
+      "name": "Awards",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "awards",
+      "items": []
+    },
+    "certifications": {
+      "name": "Certificaten",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "certifications",
+      "items": [
+        {
+          "id": "f5elegzhv0qbr3w3tgs6jecj",
+          "visible": true,
+          "name": "Propedeuse",
+          "issuer": "Hogeschool Rotterdam",
+          "date": "2024",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "u159ffx5qadq9h777qwhn1yp",
+          "visible": true,
+          "name": "Havo Diploma",
+          "issuer": "",
+          "date": "",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "education": {
+      "name": "Educatie",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "education",
+      "items": [
+        {
+          "id": "vwbgc5zdtj40h7dh5w7qilwo",
+          "visible": true,
+          "institution": "Hogeschool Rotterdam",
+          "studyType": "Voltijd opleiding",
+          "area": "Creative Media & Game Technologies ",
+          "score": "",
+          "date": "September 2023 - heden",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": "https://cmgt.hr.nl/"
+          }
+        },
+        {
+          "id": "fr3j7oaj00lineay6h4rk5nd",
+          "visible": true,
+          "institution": "Melanchthon Schiebroek",
+          "studyType": "Middelbaar onderwijs",
+          "area": "HAVO",
+          "score": "8 gemiddeld",
+          "date": "2017 - 2022",
+          "summary": "<p>Ik heb mijn HAVO-diploma gehaald met 5 jaar VWO en de opleiding afgemaakt met 1 jaar havo 5.</p>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "experience": {
+      "name": "Werkervaring",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "experience",
+      "items": [
+        {
+          "id": "tiy4tbvukx3q14jceiik5shz",
+          "visible": true,
+          "company": "Hogeschool Rotterdam",
+          "position": "Peercoach",
+          "location": "hogeschool Rotterdam, Wijnhaven 99",
+          "date": "September 2024 - heden",
+          "summary": "<p>Ik kon deze baan doen, doordat ik mijn <strong>propedeuse </strong>heb gehaald in het eerste jaar. Ik geef extra hulp aan de eerstejaars CMGT. Ik help ook bij open dagen en bij sportdagen bijvoorbeeld. Deze baan bevat vooral helpen met code en het zijn van een vertrouwenspersoon die kan helpen bij de eerstejaars vakken.</p>",
+          "url": {
+            "label": "",
+            "href": "https://www.hogeschoolrotterdam.nl/"
+          }
+        },
+        {
+          "id": "mrgtve4vz0b91h78fyema17p",
+          "visible": true,
+          "company": "Swimmin'",
+          "position": "Zwem instructeur",
+          "location": "Westersingel, Ringdijk",
+          "date": "September 2023 - December- 2023",
+          "summary": "<p>Ik gaf tijdens deze baan zwemles aan kinderen van 4-6 jaar. Ik werkte op de Zaterdag van 8:15 tot 14:30. Tijdens deze dagen had ik 8 groepen van een paar kinderen die wij goed de aandacht en tijd gaven om te leren zwemmen. Ik had hierbij leiderschapsvermogen en geduld nodig.</p>",
+          "url": {
+            "label": "",
+            "href": "https://swimmin.nl/"
+          }
+        }
+      ]
+    },
+    "volunteer": {
+      "name": "Volunteering",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "volunteer",
+      "items": []
+    },
+    "interests": {
+      "name": "Interesses",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "interests",
+      "items": [
+        {
+          "id": "jdrj57lh35fdfkfcxer5gdxn",
+          "visible": true,
+          "name": "Basgitaar, Boulderen, Muziek, Sport",
+          "keywords": []
+        }
+      ]
+    },
+    "languages": {
+      "name": "Talen",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "languages",
+      "items": [
+        {
+          "id": "c8gd9pesb8wn0s7gg74qieft",
+          "visible": true,
+          "name": "Nederlands",
+          "description": "",
+          "level": 5
+        },
+        {
+          "id": "ysur8gimcjw16s1204x5rr20",
+          "visible": true,
+          "name": "Engels",
+          "description": "",
+          "level": 5
+        },
+        {
+          "id": "yeo1tiwnlj2zg7clwfb6czmj",
+          "visible": true,
+          "name": "Duits",
+          "description": "",
+          "level": 2
+        },
+        {
+          "id": "cbquoc24t3bpjlarzbgi3bb3",
+          "visible": true,
+          "name": "Spaans",
+          "description": "",
+          "level": 1
+        }
+      ]
+    },
+    "profiles": {
+      "name": "Profiles",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "profiles",
+      "items": [
+        {
+          "id": "ev2bbgj8zxdsayqmcr0a4vh2",
+          "visible": true,
+          "network": "Github",
+          "username": "kasperdejong",
+          "icon": "github",
+          "url": {
+            "label": "",
+            "href": "https://github.com/Kasperdejong"
+          }
+        },
+        {
+          "id": "clqcmknllpnljzxsnk4v4pp6",
+          "visible": true,
+          "network": "LinkedIn",
+          "username": "kasper-de-jong",
+          "icon": "linkedin",
+          "url": {
+            "label": "",
+            "href": "https://www.linkedin.com/in/kasper-de-jong/"
+          }
+        }
+      ]
+    },
+    "projects": {
+      "name": "Projects",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "projects",
+      "items": []
+    },
+    "publications": {
+      "name": "Publications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "publications",
+      "items": []
+    },
+    "references": {
+      "name": "References",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "references",
+      "items": []
+    },
+    "skills": {
+      "name": "Vaardigheden",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "skills",
+      "items": [
+        {
+          "id": "dq772shle4548ypah8u0tqzm",
+          "visible": true,
+          "name": "HTML/CSS",
+          "description": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "qaayb1n11qktmrx30v9cc12o",
+          "visible": true,
+          "name": "Javascript",
+          "description": "",
+          "level": 3,
+          "keywords": []
+        },
+        {
+          "id": "hfnkndfcshqo82glc63rnsrc",
+          "visible": true,
+          "name": "Laravel",
+          "description": "",
+          "level": 3,
+          "keywords": []
+        },
+        {
+          "id": "m4ui70f53rx0uzcboirj190h",
+          "visible": true,
+          "name": "Express/React",
+          "description": "",
+          "level": 3,
+          "keywords": []
+        },
+        {
+          "id": "psdg0o2d4kbsqnidwef6sdvu",
+          "visible": true,
+          "name": "Design",
+          "description": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "i8yqtisa7magm9r8kgdlqlg7",
+          "visible": true,
+          "name": "Basgitaar",
+          "description": "",
+          "level": 4,
+          "keywords": []
+        }
+      ]
+    },
+    "custom": {}
+  },
+  "metadata": {
+    "template": "leafish",
+    "layout": [
+      [
+        [
+          "profiles",
+          "summary",
+          "experience",
+          "education",
+          "projects",
+          "volunteer",
+          "references"
+        ],
+        [
+          "skills",
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "languages"
+        ]
+      ]
+    ],
+    "css": {
+      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
+      "visible": false
+    },
+    "page": {
+      "margin": 18,
+      "format": "a4",
+      "options": {
+        "breakLine": true,
+        "pageNumbers": true
+      }
+    },
+    "theme": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "primary": "#dc2626"
+    },
+    "typography": {
+      "font": {
+        "family": "IBM Plex Serif",
+        "subset": "latin",
+        "variants": [
+          "regular",
+          "italic",
+          "600"
+        ],
+        "size": 14
+      },
+      "lineHeight": 1.5,
+      "hideIcons": false,
+      "underlineLinks": true
+    },
+    "notes": ""
+  }
+}
