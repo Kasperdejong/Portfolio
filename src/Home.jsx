@@ -21,7 +21,7 @@ function Home() {
         {name: 'SQL', icon: <SiMysql className="text-blue-400 text-3xl"/>},
     ];
     return (
-        <header className="bg-[url(/artsy-background.jpg)] bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col items-center">
+        <header className="bg-[url(/Portfolio/artsy-background.jpg)] bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col items-center">
             <h1 className="text-red-600 z-10 text-4xl  pt-12 font-bold text-center drop-shadow-[2px_2px_0px_black]">
                 Welkom op mijn CV website
             </h1>
@@ -37,7 +37,7 @@ function Home() {
                     </p>
                 </div>
                 <div
-                    className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 bg-[url(/Closeupfoto.jpg)] border-black bg-cover bg-center rounded-full"></div>
+                    className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 bg-[url(/Portfolio/Closeupfoto.jpg)] border-black bg-cover bg-center rounded-full"></div>
             </div>
 
             <div className="w-full flex flex-col items-center">
