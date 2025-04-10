@@ -16,7 +16,7 @@ function Projects(){
                             Projecten
                         </h2>
 
-                        <div id="gameCarousel" className="carousel slide" data-bs-ride="carousel">
+                        <div id="Carousel" className="carousel slide" data-bs-ride="carousel">
                             <div className="carousel-inner">
 
                                 <div className="carousel-item active">
