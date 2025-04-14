@@ -1,65 +1,84 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { useState } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
+
+const projects = [
+    {
+        image: "/Portfolio/artsy-background.jpg",
+        title: "Dit project",
+        description: "Dit is wat ik deed tijdens dit project",
+    },
+    {
+        image: "/Portfolio/Closeupfoto.jpg",
+        title: "Dit andere project",
+        description: "test",
+    },
+    {
+        image: "/Portfolio/cv.png",
+        title: "Project",
+        description: "Dit is wat ik deed tijdens dit andere project",
+    },
+];
 
 const ProjectsCarousel = () => {
+    const [currentProject, setCurrentProject] = useState(0);
+
+    // Next slide function
+    const nextSlide = () => {
+        setCurrentProject((prevProject) => (prevProject + 1) % projects.length);
+    };
+
+    // Previous slide function
+    const prevSlide = () => {
+        setCurrentProject((prevProject) => (prevProject - 1 + projects.length) % projects.length);
+    };
+
     return (
-        <section className="container mx-auto my-8">
-            <h2 className="text-2xl font-bold text-center mb-6">
-                Top Games Shared by Our Users
-            </h2>
-
-            <div id="ProjectsCarousel" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-
-                    <div className="carousel-item active">
+        <div className="relative w-full max-w-4xl mx-auto mt-10">
+            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+                {projects.map((project, index) => (
+                    <div
+                        key={index}
+                        className={`duration-700 ease-in-out ${index === currentProject ? "block" : "hidden"}`}
+                    >
                         <img
-                            src="/artsy-background.jpg"
-                            className="d-block w-100 rounded-lg"
-                            alt="Game 1"
+                            src={project.image}
+                            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                            alt={project.title}
                         />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Helldivers 2</h5>
-                            <p>Shoot the bugs and robots and make an explosive entrance in this sick game</p>
-                        </div>
                     </div>
-
-                    <div className="carousel-item">
-                        <img
-                            src="/Closeupfoto.jpg"
-                            className="d-block w-100 rounded-lg"
-                            alt="Game 2"
-                        />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5 className="text-black">Dit project</h5>
-                            <p className="text-black"></p>
-                        </div>
-                    </div>
-
-                    <div className="carousel-item">
-                        <img
-                            src="/cv.png"
-                            className="d-block w-100 rounded-lg"
-                            alt="Game 3"
-                        />
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Project</h5>
-                            <p>Dit is wat ik deed tijdens dit project</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <button className="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-
-                <button className="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
+                ))}
             </div>
-        </section>
+
+            {/* Carousel Buttons */}
+            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button
+                    onClick={prevSlide}
+                    className="w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100"
+                ></button>
+                <button
+                    onClick={nextSlide}
+                    className="w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100"
+                ></button>
+            </div>
+
+            {/* Previous Button */}
+            <button
+                onClick={prevSlide}
+                className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
+            >
+                <ChevronLeftIcon className="w-6 h-6 text-white" />
+                <span className="sr-only">Previous</span>
+            </button>
+
+            {/* Next Button */}
+            <button
+                onClick={nextSlide}
+                className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
+            >
+                <ChevronRightIcon className="w-6 h-6 text-white" />
+                <span className="sr-only">Next</span>
+            </button>
+        </div>
     );
 };
 
