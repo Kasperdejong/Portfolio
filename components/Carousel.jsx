@@ -42,7 +42,6 @@ const ProjectsCarousel = () => {
                     >
                         <img
                             src={project.image}
-                            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                             alt={project.title}
                         />
                     </div>

@@ -1,0 +1,23 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%; /* Ensure body and html elements are full width */
+}
+
+.project-image {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem; /* Adds space between the images vertically */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* Always 2 rows */
+    gap: 0.25rem 1rem; /* Horizontal gap of 1rem and vertical gap of 0.25rem */
+    }
+

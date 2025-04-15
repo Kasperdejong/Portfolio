@@ -29,7 +29,7 @@ function Home() {
 
 
             <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-xl w-full gap-10 p-4 mt-20 sm:mt-16 md:mt-24">
-                <div className="bg-red-600 text-white p-6 rounded-lg shadow-lg w-full lg:w-1/2">
+                <div className="bg-red-600 border-gray-800  border-2 text-white p-6 rounded-lg shadow-lg w-full lg:w-1/2">
                     <h2 className="text-xl font-semibold">Mijn naam is Kasper</h2>
                     <p className="mt-2">
                         Ik ben een student aan de Hogeschool Rotterdam.
