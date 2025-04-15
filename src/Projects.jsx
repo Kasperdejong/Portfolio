@@ -1,17 +1,15 @@
 import "./App.css";
 import Blob3 from "/components/Blob3";
-import ProjectsCarousel from "../components/Carousel.jsx";
 import ProjectShowcase from "../components/ProjectShowcase";
 
 function Projects() {
     return (
         <>
             <header className="bg-[url('/Portfolio/artsy-background.jpg')] bg-cover bg-center bg-no-repeat min-h-screen w-full relative">
-                <div className="absolute top-4/4 left-1/2 transform -translate-x-1/2 z-0">
+                <div className="absolute top-4/4 left-1/2 transform -translate-x-1/2 z-0 pt-5">
                     <Blob3/>
                 </div>
-
-                <h2 className="text-red-600 z-10 text-3xl p-10 font-bold text-center drop-shadow-[2px_2px_0px_black]">
+                <h2 className="text-red-600 z-10 text-3xl pt-14 pb-6 font-bold text-center drop-shadow-[2px_2px_0px_black]">
                     mijn Projecten
                 </h2>
 
@@ -46,7 +44,11 @@ function Projects() {
                             ]}
                             description="Dit project heb ik samen met 4 anderen gemaakt voor het keuzevak gebarentaal bij intake van de Hogeschool Rotterdam, en ik zat in het frontend team. Wij hadden ook een backend team die de database regelde en alle
                              gebaren naar data omzette. Wij haalden deze data op en hebben een website gemaakt die de studenten die het keuzevak volgen kunnen gebruiken om alle stof uit het werkboek te leren op een leuke manier.
-                             Ik heb de homepage, flitskaarten en lessen pagina gemaakt. En ook nog meegeholpen aan de rest van de pagina's gewerkt natuurlijk."
+                             Ik heb de homepage, flitskaarten en lessen pagina gemaakt. En ook nog meegeholpen aan de rest van de pagina's gewerkt natuurlijk.
+                             Wij hadden origineel een heel leuk idee voor deze app. Het heette
+                             SignWitch en het was een woordgrap met sandwitch en sign language. We wilden ook het een leuk paars kleurenthema geven en een heks die een sandwitch maakt waarbij elke opdracht die je deed een ander ingredient toevoegde aan de sandwitch.
+                             De opdrachtgever wilden iets serieuzer, dus hebben we de website een complete overhaul gegeven naar een Hogeschool Rotterdam thema met minder gamification. Ik kan dus mijn creativiteit loslaten maar als dat niet kan word er nogsteeds een zeer goed product neergezet.
+                             En als laatste is de achtergrond hier een donkerpaars als ode naar Signwitch. Dit project heeft geen link, omdat het alleen beschikbaar is voor de studenten van het keuzevak. De rest wordt er gelijk afgetrapt."
                             skills={["React", "Vite ", "Tailwind CSS "]}
                         />
                         </div>
