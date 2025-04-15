@@ -3,11 +3,11 @@
     "name": "Kasper de Jong",
     "headline": "Creative Developer",
     "email": "kasperdejong@gmail.com",
-    "phone": "+31624467681",
+    "phone": "",
     "location": "Rotterdam, Zuid-Holland",
     "url": {
       "label": "",
-      "href": ""
+      "href": "https://kasperdejong.github.io/Portfolio/"
     },
     "customFields": [],
     "picture": {
@@ -29,7 +29,7 @@
       "separateLinks": true,
       "visible": true,
       "id": "summary",
-      "content": "<p>Ik ben een student aan de Hogeschool Rotterdam. De opleiding die ik doe is CMGT, Creative Media &amp; Game Technologies. En ik zoek banen, waarin ik mijn creativiteit kan uiten en een waardevolle bijdrage kan leveren. Ik heb ervaring met HTML/CSS, PHP, Javascript, Laravel en Fullstack web development.</p>"
+      "content": "<p>Ik ben een student aan de Hogeschool Rotterdam. De opleiding die ik doe is CMGT, Creative Media &amp; Game Technologies. En ik zoek een frontend development stage, waarin ik mijn creativiteit kan uiten en een waardevolle bijdrage kan leveren. Ik heb ervaring met HTML/CSS, Javascript, React, Laravel, Express, PHP, en Fullstack web development.</p>"
     },
     "awards": {
       "name": "Awards",
@@ -50,7 +50,7 @@
           "id": "f5elegzhv0qbr3w3tgs6jecj",
           "visible": true,
           "name": "Propedeuse",
-          "issuer": "Hogeschool Rotterdam",
+          "issuer": "CMGT, Hogeschool Rotterdam",
           "date": "2024",
           "summary": "",
           "url": {
@@ -61,7 +61,7 @@
         {
           "id": "u159ffx5qadq9h777qwhn1yp",
           "visible": true,
-          "name": "Havo Diploma",
+          "name": "Havo Diploma - Economie & Maatschappij",
           "issuer": "",
           "date": "",
           "summary": "",
@@ -162,7 +162,7 @@
         {
           "id": "jdrj57lh35fdfkfcxer5gdxn",
           "visible": true,
-          "name": "Basgitaar, Boulderen, Muziek, Sport",
+          "name": "Basgitaar, Boulderen, Muziek, Sport, Games",
           "keywords": []
         }
       ]
@@ -275,6 +275,14 @@
           "keywords": []
         },
         {
+          "id": "t1hyjt6g87fisspcm30mblrl",
+          "visible": true,
+          "name": "React",
+          "description": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
           "id": "qaayb1n11qktmrx30v9cc12o",
           "visible": true,
           "name": "Javascript",
@@ -283,17 +291,17 @@
           "keywords": []
         },
         {
-          "id": "hfnkndfcshqo82glc63rnsrc",
+          "id": "m4ui70f53rx0uzcboirj190h",
           "visible": true,
-          "name": "Laravel",
+          "name": "Express",
           "description": "",
           "level": 3,
           "keywords": []
         },
         {
-          "id": "m4ui70f53rx0uzcboirj190h",
+          "id": "hfnkndfcshqo82glc63rnsrc",
           "visible": true,
-          "name": "Express/React",
+          "name": "Laravel",
           "description": "",
           "level": 3,
           "keywords": []

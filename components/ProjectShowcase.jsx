@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProjectShowcase.css";
 
-const ProjectShowcase = ({title, images, description, skills, bgColor = "#1f2937"}) => {
+const ProjectShowcase = ({title, images, description, projectLink, skills, bgColor = "#1f2937"}) => {
     return (
         <div className="flex justify-center">
             <div
@@ -34,6 +34,21 @@ const ProjectShowcase = ({title, images, description, skills, bgColor = "#1f2937
                     <h3 className="text-xl font-semibold mb-2">Beschrijving:</h3>
                     <p className="text-gray-200">{description}</p>
                 </div>
+                
+                {/* Project Link */}
+                {projectLink && (
+                    <div className="mb-4">
+                        <h3 className="text-xl font-semibold mb-2">Project Link:</h3>
+                        <a
+                            href={projectLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:underline"
+                        >
+                            Bekijk het project →
+                        </a>
+                    </div>
+                )}
 
                 {/* Skills */}
                 <div>
