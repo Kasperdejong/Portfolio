@@ -15,7 +15,6 @@ function Home() {
     const backendSkills = [
         { name: 'PHP', icon: <FaPhp className="text-indigo-500 text-2xl sm:text-3xl" /> },
         { name: 'Laravel', icon: <SiLaravel className="text-red-600 text-2xl sm:text-3xl" /> },
-        { name: 'Node.js', icon: <FaNodeJs className="text-green-500 text-2xl sm:text-3xl" /> },
         { name: 'MongoDB', icon: <SiMongodb className="text-green-400 text-2xl sm:text-3xl" /> },
         { name: 'SQL', icon: <SiMysql className="text-blue-400 text-2xl sm:text-3xl" /> },
     ];
@@ -23,7 +22,7 @@ function Home() {
     return (
         <header className="relative bg-[url(/Portfolio/artsy-background.jpg)] bg-cover bg-center bg-no-repeat min-h-screen w-full flex flex-col items-center">
             <Blob2 />
-            <h1 className="text-red-600 z-10 text-2xl sm:text-3xl md:text-4xl pt-12 font-bold text-center drop-shadow-[2px_2px_0px_black]">
+            <h1 className="text-red-600 z-10 text-2xl sm:text-3xl md:text-4xl pt-14 font-bold text-center drop-shadow-[2px_2px_0px_black]">
                 Welkom op mijn CV website
             </h1>
 
@@ -34,8 +33,8 @@ function Home() {
                     <p className="mt-2">
                         Ik ben een student aan de Hogeschool Rotterdam.
                         De opleiding die ik doe is CMGT, Creative Media & Game Technologies.
-                        En ben vooral geïnteresseerd in banen waarin ik mijn creativiteit kan uiten.
-                        Ik heb ervaring met HTML/CSS, PHP, Javascript, Laravel en Fullstack web development.
+                        En ben vooral geïnteresseerd in stages waarin ik mijn creativiteit kan uiten.
+                        Ik heb ervaring met React, HTML/CSS, Javascript, PHP, Laravel en Fullstack web development.
                     </p>
                 </div>
 
@@ -44,15 +43,15 @@ function Home() {
 
             <div className="relative w-full flex flex-col items-center">
                 <Blob />
-                <h2 className="text-red-600 z-10 text-2xl sm:text-3xl md:text-4xl p-10 font-bold text-center drop-shadow-[2px_2px_0px_black]">Mijn Skills</h2>
+                <h2 className="text-red-600 z-10 text-2xl sm:text-3xl md:text-4xl p-8 font-bold text-center drop-shadow-[2px_2px_0px_black]">Mijn Skills</h2>
 
                 {/* Frontend Skills */}
                 <div className="mb-8 w-11/12 md:w-3/4">
                     <h3 className="text-red-600 drop-shadow-[1px_1px_0px_black] text-xl sm:text-2xl font-semibold mb-4">Frontend Development</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
                         {frontendSkills.map((skill) => (
                             <div key={skill.name}
-                                 className="bg-gray-900 text-orange-500 px-6 py-4 rounded-lg shadow-lg text-lg font-semibold flex flex-col items-center transition-all transform hover:scale-105 relative overflow-hidden">
+                                 className="bg-gray-800 text-orange-500 px-6 py-4 rounded-lg shadow-lg text-lg font-semibold flex flex-col items-center transition-all transform hover:scale-105 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-red-600 animate-[progress_2s_linear_infinite]"></div>
                                 {skill.icon}
                                 <p className="mt-2 text-center">{skill.name}</p>
@@ -64,10 +63,10 @@ function Home() {
                 {/* Backend Skills */}
                 <div className="mb-8 w-11/12 md:w-3/4">
                     <h3 className="text-red-600 drop-shadow-[1px_1px_0px_black] text-xl sm:text-2xl font-semibold mb-4">Backend Development</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
                         {backendSkills.map((skill) => (
                             <div key={skill.name}
-                                 className="bg-gray-900 text-orange-500 px-6 py-4 rounded-lg shadow-lg text-lg font-semibold flex flex-col items-center transition-all transform hover:scale-105 relative overflow-hidden">
+                                 className="bg-gray-800 text-orange-500 px-6 py-4 rounded-lg shadow-lg text-lg font-semibold flex flex-col items-center transition-all transform hover:scale-105 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-red-600 animate-[progress_2s_linear_infinite]"></div>
                                 {skill.icon}
                                 <p className="mt-2 text-center">{skill.name}</p>

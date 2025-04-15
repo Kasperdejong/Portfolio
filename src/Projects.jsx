@@ -33,6 +33,7 @@ function Projects() {
                             skills={["Vite ", "Tailwind CSS ", "Neural Networks ", "Mediapipe"]}
                         />
                         </div>
+                        <div className="border-2 border-amber-600 rounded-3xl mt-10">
                         <ProjectShowcase
                             title="👐Totaal ander project👐"
                             bgColor="#0f766e"
@@ -51,6 +52,7 @@ De gebaren kun je dan nadoen, en dan speelt er een bijbehorend geluid op basis v
 Het is een leuk project, gemaakt voor entertainment, en ik heb mijn passie voor muziek hierin verwerkt!"
                             skills={["Vite ", "Tailwind CSS ", "Neural Networks ", "Mediapipe"]}
                         />
+                        </div>
                     </section>
                 </main>
             </header>

@@ -6,7 +6,7 @@ function Contact() {
     return (
         <header className="bg-[url(/Portfolio/artsy-background.jpg)] bg-cover bg-center bg-no-repeat h-screen w-full relative flex flex-col items-center  text-white">
             <div className="bg-red-600 border-gray-800 border-2 text-white p-6 rounded-lg shadow-lg w-full lg:w-1/2 flex flex-col items-center mt-20 mb-10">
-                <h1 className="text-4xl font-bold mb-4">Contact?</h1>
+                <h1 className="text-white-600 z-10 text-2xl sm:text-3xl md:text-4xl font-bold pb-4 drop-shadow-[2px_2px_0px_black]">Contact?</h1>
                 <p className="text-lg text-center max-w-xl mb-8 px-4">
                     Wil jij contact met mij opnemen of mijn bijdrages zien op GitHub en LinkedIn? Dat kan hier!
                 </p>
