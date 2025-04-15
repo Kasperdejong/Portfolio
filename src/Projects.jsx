@@ -29,7 +29,7 @@ function Projects() {
                             De gebaren kun je dan nadoen, en dan speelt er een bijbehorend geluid op basis van het gebaar – bijvoorbeeld een gitaar, basgitaar of een kickdrum.
                             Het is een leuk project, gemaakt voor entertainment, en ik heb mijn passie voor muziek hierin verwerkt!"
                             projectLink="https://kasperdejong.github.io/jazzHands/"
-                            skills={["Vite ", "Tailwind CSS ", "Neural Networks ", "Mediapipe"]}
+                            skills={["Vite ", "Tailwind CSS ", "Neural Networks ", "Mediapipe", "HTML/CSS"]}
                         />
                         </div>
                         <div className="border-2 border-amber-600 rounded-3xl mt-10">
@@ -49,7 +49,37 @@ function Projects() {
                              SignWitch en het was een woordgrap met sandwitch en sign language. We wilden ook het een leuk paars kleurenthema geven en een heks die een sandwitch maakt waarbij elke opdracht die je deed een ander ingredient toevoegde aan de sandwitch.
                              De opdrachtgever wilden iets serieuzer, dus hebben we de website een complete overhaul gegeven naar een Hogeschool Rotterdam thema met minder gamification. Ik kan dus mijn creativiteit loslaten maar als dat niet kan word er nogsteeds een zeer goed product neergezet.
                              En als laatste is de achtergrond hier een donkerpaars als ode naar Signwitch. Dit project heeft geen link, omdat het alleen beschikbaar is voor de studenten van het keuzevak. De rest wordt er gelijk afgetrapt."
-                            skills={["React", "Vite ", "Tailwind CSS "]}
+                            skills={["React", "Vite ", "Tailwind CSS", "HTML/CSS"]}
+                        />
+                        </div>
+                        <div className="border-2 border-amber-600 rounded-3xl mt-10">
+                        <ProjectShowcase
+                            title="🎮Gamevault🔒"
+                            bgColor="#020079"
+                            images={[
+                                "/Portfolio/gameVault1.png",
+                                "/Portfolio/gameVault2.png",
+                                "/Portfolio/gameVault3.png",
+                                "/Portfolio/gameVault4.png",
+                            ]}
+                            description="Hier ging ik voor het eerst aan de slag met Laravel. De naam van het project is Gamevault. Ik wilde een website maken waar gebruikers hun favoriete games kunnen delen met elkaar. Laravel was een erg fijn
+                            framework om mee te werken. Het heeft een hele fijne mappenstructuur wat goed is voor het overzicht en door de ORM van Laravel is het ook heel makkelijk om met de database te werken. Ook heb ik hier voor het eerst met een
+                            Bootstrap carousel gewerkt wat een hele leuke toevoeging was aan de website. Het zag er gelijk een struk beter uit."
+                            skills={["Laravel", "Tailwind CSS", "Javascript", "PHP", "MySQL", "Bootstrap", "HTML/CSS"]}
+                        />
+                        </div>
+                        <div className="border-2 border-amber-600 rounded-3xl mt-10">
+                        <ProjectShowcase
+                            title="🚧Under Construction🚧"
+                            bgColor="#F4BC1C"
+                            images={[
+                                "/Portfolio/construction.png",
+                                "/Portfolio/construction.png",
+                                "/Portfolio/construction.png",
+                                "/Portfolio/construction.png",
+                            ]}
+                            description="Het volgende project wat ik toe wil voegen komt hier!"
+                            skills={["Skills to pay the bills"]}
                         />
                         </div>
                     </section>
