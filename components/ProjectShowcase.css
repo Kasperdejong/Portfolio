@@ -1,23 +1,181 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%; /* Ensure body and html elements are full width */
-}
-
-.project-image {
+.project-showcase-wrapper-card {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    height: 29rem;
-    object-fit: cover;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem; /* Adds space between the images vertically */
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
-    grid-template-rows: repeat(2, 1fr); /* Always 2 rows */
-    gap: 0.25rem 1rem; /* Horizontal gap of 1rem and vertical gap of 0.25rem */
+.project-showcase-container {
+    display: flex;
+    flex-direction: column;
+    /* Top padding is 1.2rem; right, bottom, and left are 2rem */
+    padding: 1.2rem 2rem 2rem 2rem;
+    border-radius: 1.2rem;
+    color: white;
+    width: 100%;
+    height: 600px;
+    box-sizing: border-box;
+    /* Transition set to 1s */
+    transition: background-color 1s ease-in-out;
+}
+
+.project-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    /* Bottom margin is 1.2rem, matching the 1.2rem top padding of the container */
+    margin: 0 0 1.2rem 0;
+    text-shadow: 2px 2px 0px #000;
+    flex-shrink: 0;
+}
+
+/* Two-column layout */
+.showcase-content-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Left Column (Visuals) */
+.showcase-visual-side {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.showcase-visual-side .image-carousel {
+    flex-grow: 1;
+    max-height: calc(100% - 45px);
+    /* Adjusted to match the taller content area */
+    margin-bottom: 0.75rem;
+}
+
+.project-link-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    flex-shrink: 0;
+}
+
+/* Right Column (Details) */
+.showcase-info-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.project-section {
+    margin-bottom: 1rem;
+}
+
+.description-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 0;
+}
+
+.description-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.description-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.description-box::-webkit-scrollbar-thumb {
+    background: #FE840E;
+    border-radius: 3px;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #FE840E;
+}
+
+.description-text {
+    color: #f3f4f6;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.project-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 1s ease-in-out;
+    /* Transition set to 1s */
+    font-size: 1.1rem;
+}
+
+.project-link:hover {
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
+.skills-section {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.skills-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+}
+
+.skill-badge {
+    background-color: #D99706;
+    color: white;
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.375rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+    .project-showcase-container {
+        height: auto;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        /* Native vertical padding on mobile screens */
     }
 
+    .showcase-content-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .showcase-visual-side {
+        height: auto;
+    }
+
+    .showcase-visual-side .image-carousel {
+        max-height: none;
+        margin-bottom: 1rem;
+    }
+
+    .showcase-info-side {
+        height: auto;
+        overflow: visible;
+    }
+
+    .description-box {
+        overflow-y: visible;
+        max-height: none;
+        flex-grow: 0;
+    }
+}

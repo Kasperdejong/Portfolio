@@ -1,75 +1,58 @@
 import React from "react";
+import ImageCarousel from "./ImageCarousel";
 import "./ProjectShowcase.css";
 
-const ProjectShowcase = ({title, images, description, projectLink, skills, bgColor = "#1f2937"}) => {
+const ProjectShowcase = ({ title, images, description, projectLink, skills, bgColor = "#1f2937", overrideBg }) => {
+    const activeBackground = overrideBg || bgColor;
+
     return (
-        <div className="flex justify-center">
+        <div className="project-showcase-wrapper-card">
             <div
                 className="project-showcase-container"
-                style={{
-                    backgroundColor: bgColor,
-                    padding: "1.5rem",
-                    borderRadius: "1.4rem",
-                    color: "white",
-                    boxShadow:
-                        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
-                }}
+                style={{ backgroundColor: activeBackground }}
             >
-                <h2 className="text-3xl font-bold text-center mb-6">{title}</h2>
+                {/* Center Title - Spans across the entire top area */}
+                <h2 className="project-title">{title}</h2>
 
-                {/* Image Grid with tiny gap */}
-                <div className="image-grid">
-                    {images.map((src, index) => (
-                        <img
-                            key={index}
-                            src={src}
-                            alt={`Project image ${index + 1}`}
-                            className="project-image"
-                        />
-                    ))}
-                </div>
-
-                {/* Description */}
-                <div className="mb-4">
-                    <h3 className="text-xl font-semibold mb-2">Beschrijving:</h3>
-                    <p className="text-gray-200">{description}</p>
-                </div>
-                
-                {/* Project Link */}
-                {projectLink && (
-                    <div className="mb-4">
-                        <h3 className="text-xl font-semibold mb-2">Project Link:</h3>
-                        <a
-                            href={projectLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-400 hover:underline"
-                        >
-                            Bekijk het project →
-                        </a>
+                {/* Grid holding the left and right columns */}
+                <div className="showcase-content-grid">
+                    
+                    {/* Left Column: Image Slideshow & Project Link */}
+                    <div className="showcase-visual-side">
+                        <ImageCarousel images={images} />
+                        {projectLink && (
+                            <div className="project-link-wrapper">
+                                <a
+                                    href={projectLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-link"
+                                >
+                                    Bekijk het project →
+                                </a>
+                            </div>
+                        )}
                     </div>
-                )}
 
-                {/* Skills */}
-                <div>
-                    <h3 className="text-xl font-semibold mb-2">Gebruikte Skills:</h3>
-                    <div style={{display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "1rem"}}>
-                        {skills.map((skill, index) => (
-                            <span
-                                key={index}
-                                style={{
-                                    backgroundColor: "#D99706",
-                                    color: "white",
-                                    padding: "0.25rem 0.75rem",
-                                    borderRadius: "0.375rem",
-                                    fontSize: "1rem",
-                                    textShadow: "1px 1px 0 black"
-                                }}
-                            >
-                            {skill.trim()}
-                            </span>
-                        ))}
+                    {/* Right Column: Description & Skills */}
+                    <div className="showcase-info-side">
+                        <div className="project-section description-box">
+                            <h3 className="section-subtitle">Beschrijving:</h3>
+                            <p className="description-text">{description}</p>
+                        </div>
+
+                        <div className="project-section skills-section">
+                            <h3 className="section-subtitle">Gebruikte Skills:</h3>
+                            <div className="skills-badge-container">
+                                {skills.map((skill, index) => (
+                                    <span key={index} className="skill-badge">
+                                        {skill.trim()}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
