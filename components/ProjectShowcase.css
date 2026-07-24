@@ -18,6 +18,23 @@
     transition: background-color 1s ease-in-out;
 }
 
+.construction-gif-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+/* Sizing and subtle shadow for the construction gif */
+.construction-gif {
+    max-width: 140px;
+    /* Restricts the size so it fits well inside the box */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 .project-title {
     font-size: 2.2rem;
     font-weight: bold;

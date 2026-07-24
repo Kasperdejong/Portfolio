@@ -38,7 +38,8 @@ const ProjectShowcase = ({ title, images, description, projectLink, skills, bgCo
                     <div className="showcase-info-side">
                         <div className="project-section description-box">
                             <h3 className="section-subtitle">Beschrijving:</h3>
-                            <p className="description-text">{description}</p>
+                            {/* Changed from <p> to <div> to support nested HTML/images */}
+                            <div className="description-text">{description}</div>
                         </div>
 
                         <div className="project-section skills-section">

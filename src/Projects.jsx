@@ -64,7 +64,18 @@ function Projects() {
                             "/Portfolio/construction.png",
                             "/Portfolio/construction.png",
                         ]}
-                        description="Het volgende project wat ik toe wil voegen komt hier!"
+                        description={
+                            <div>
+                                <p style={{ margin: 0 }}>Het volgende project dat ik toe wil voegen komt hier!</p>
+                                <div className="construction-gif-wrapper">
+                                    <img 
+                                        src="/Portfolio/constructionworker.gif" 
+                                        alt="Construction Worker" 
+                                        className="construction-gif"
+                                    />
+                                </div>
+                            </div>
+                        }
                         skills={["wordt vervolgd"]}
                     />
                 </ProjectCarousel>
