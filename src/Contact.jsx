@@ -1,22 +1,25 @@
-import "./App.css";
+import "./Contact.css"; // Imported the custom stylesheet
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 function Contact() {
     return (
-        <header className="bg-[url(/Portfolio/artsy-background.jpg)] bg-cover bg-center bg-no-repeat h-screen w-full relative flex flex-col items-center  text-white">
-            <div className="bg-red-600 border-gray-800 border-2 text-white p-6 rounded-lg shadow-lg w-full lg:w-1/2 flex flex-col items-center mt-20 mb-10">
-                <h1 className="text-white-600 z-10 text-2xl sm:text-3xl md:text-4xl font-bold pb-4 drop-shadow-[2px_2px_0px_black]">Contact?</h1>
-                <p className="text-lg text-center max-w-xl mb-8 px-4">
+        <header className="contact-header-container">
+            {/* Centered red info card */}
+            <div className="contact-info-card">
+                <h1 className="contact-title">Contact?</h1>
+                <p className="contact-description">
                     Wil jij contact met mij opnemen of mijn bijdrages zien op GitHub en LinkedIn? Dat kan hier!
                 </p>
             </div>
-            <div className="flex space-x-6 text-[10rem]">
+            
+            {/* Reverted to original flat row container */}
+            <div className="contact-links-container">
                 <a
                     href="https://github.com/kasperdejong"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-black transition"
+                    className="contact-link github"
                 >
                     <FaGithub />
                 </a>
@@ -25,14 +28,14 @@ function Contact() {
                     href="https://www.linkedin.com/in/kasper-de-jong/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-blue-400 transition"
+                    className="contact-link linkedin"
                 >
                     <FaLinkedin />
                 </a>
 
                 <a
                     href="mailto:1078780@hr.nl"
-                    className="hover:text-red-400 transition"
+                    className="contact-link email"
                 >
                     <MdEmail />
                 </a>

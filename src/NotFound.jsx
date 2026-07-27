@@ -1,4 +1,4 @@
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 export default function NotFound () {
     return (
@@ -15,7 +15,8 @@ export default function NotFound () {
             <div className="text-center max-w-lg mx-auto bg-white text-gray-800 rounded-lg shadow-lg p-8">
                 <h1 className="text-5xl font-bold mb-4">404</h1>
                 <p className="text-2xl mb-6">Niks te zien hier! Je pagina is niet gevonden.</p>
-                <p className="text-xl mb-4">Ga terug naar de <Link to="/" className="text-blue-500 hover:underline">Homepage</Link>
+                {/* Enabled smooth native transition back to homepage */}
+                <p className="text-xl mb-4">Ga terug naar de <Link to="/" className="text-blue-500 hover:underline" viewTransition>Homepage</Link>
                 </p>
             </div>
         </div>

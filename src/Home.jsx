@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router"; // Added React Router Link
+import { Link } from "react-router"; // Ensure Link is imported
 import { FaHtml5, FaJs, FaReact, FaNodeJs, FaPhp } from 'react-icons/fa';
 import { SiTailwindcss, SiMongodb, SiLaravel, SiMysql } from 'react-icons/si';
 import Blob from "/components/Blob";
 import Blob2 from "/components/Blob2";
+import "./App.css"; // Explicitly imported your App.css stylesheet
 
 function Home() {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
@@ -40,15 +41,15 @@ function Home() {
                     </p>
                     <h2 className="text-xl font-semibold pt-6">Wat zoek ik?</h2>
                     <p className="">
-                        Ik zoek een <b>stage</b> voor <b>frontend development</b>. Het liefst een plek waar ik mijn
+                        Ik zoek een <b>stage</b> voor <b>fullstack development</b> of in de <b>creatieve sector</b>. Het liefst een plek waar ik mijn
                         creativiteit kan uiten en goed aan de slag kan gaan.
                     </p>
                 </div>
 
-                {/* Wrapped the entire hover card in a Link to your About page */}
-                <Link to="/about" className="profile-avatar-link">
+                {/* Profile Photo Wrapper Container with hover tracking */}
+                <Link to="/about" className="profile-avatar-link" viewTransition>
                     <div 
-                        className="profile-avatar-container w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 flex-shrink-0"
+                        className="profile-avatar-container"
                         onMouseEnter={() => setIsAvatarHovered(true)}
                         onMouseLeave={() => setIsAvatarHovered(false)}
                     >
@@ -74,13 +75,14 @@ function Home() {
                     <h3 className="text-red-600 drop-shadow-[1px_1px_0px_black] text-xl sm:text-2xl font-semibold mb-4">Frontend Development</h3>
                     <div className="grid grid-cols-2 gap-6">
                         {frontendSkills.map((skill) => (
-                            <a key={skill.name} href="/Portfolio/projecten" className="no-underline">
+                            /* Converted from <a> to <Link> for instant view transitions */
+                            <Link key={skill.name} to="/projecten" className="no-underline" viewTransition>
                                 <div className="bg-gray-800 text-orange-500 px-6 py-4 rounded-lg shadow-lg text-lg font-semibold flex flex-col items-center transition-all transform hover:scale-105 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-red-600 animate-[progress_2s_linear_infinite]"></div>
                                     {skill.icon}
                                     <p className="mt-2 text-center">{skill.name}</p>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -90,13 +92,14 @@ function Home() {
                     <h3 className="text-red-600 drop-shadow-[1px_1px_0px_black] text-xl sm:text-2xl font-semibold mb-4">Backend Development</h3>
                     <div className="grid grid-cols-2 gap-6">
                         {backendSkills.map((skill) => (
-                            <a key={skill.name} href="/Portfolio/projecten" className="no-underline">
+                            /* Converted from <a> to <Link> for instant view transitions */
+                            <Link key={skill.name} to="/projecten" className="no-underline" viewTransition>
                                 <div className="bg-gray-800 text-orange-500 px-6 py-4 rounded-lg shadow-lg text-lg font-semibold flex flex-col items-center transition-all transform hover:scale-105 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-red-600 animate-[progress_2s_linear_infinite]"></div>
                                     {skill.icon}
                                     <p className="mt-2 text-center">{skill.name}</p>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>

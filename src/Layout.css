@@ -7,23 +7,46 @@
     width: 100%;
 }
 
+/* ==========================================
+   SMOOTH PAGE TRANSITIONS
+   ========================================== */
+
+   ::view-transition-old(root),
+   ::view-transition-new(root) {
+       animation-duration: 0.4s;
+       /* Controls transition speed (adjust higher to make it slower/softer) */
+       animation-timing-function: ease-in-out;
+   }
+
+.page-fade {
+    animation: pageEnter 0.4s ease-in-out forwards;
+    /* Soft 0.4s fade-in with no slide up */
+    will-change: opacity;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .navbar-header {
     background-color: #1f2937;
-    /* Dark Gray Base */
     border-bottom: 2px solid #D99706;
-    /* Matches your gold/amber accents */
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
     width: 100%;
-    /* Removes the max-width restriction to span the full window width */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.25rem;
-    /* Tightened padding to bring the logo and flags flush with the screen edges */
     box-sizing: border-box;
 }
 
@@ -100,9 +123,12 @@
 
 /* Main Content area base container */
 .main-content-area {
-    background-color: #0d1b2a;
+    background-image: url('/Portfolio/artsy-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: calc(100vh - 75px);
-    /* Fits exact viewport minus navbar boundary height */
+    position: relative;
 }
 
 /* Responsive Navbar layout collapsing for Mobile devices */
