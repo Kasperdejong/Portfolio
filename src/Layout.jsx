@@ -1,37 +1,36 @@
-import { Link, Outlet, useLocation } from "react-router";
-import { useState, useEffect } from "react";
+import { Link, Outlet } from "react-router";
+import "./Layout.css"; // Imported the custom CSS
 
 function Layout() {
-    const location = useLocation();
-    const [inProp, setInProp] = useState(true);
-
-    useEffect(() => {
-        setInProp(false);
-        const transitionTimeDelay = setTimeout(() => {
-            setInProp(true);
-        }, 0);
-
-        return () => clearTimeout(transitionTimeDelay);
-    }, [location]);
-
     return (
-        <div className="mx-auto text-red-600">
-            <header className="bg-gray-800 overflow-hidden border-b-2 border-amber-600">
-                <nav className="relative flex flex-col sm:flex-row items-center justify-center px-6 py-4 text-red drop-shadow-[1px_1px_0px_#f97316]">
-                    <div className="z-20 text-2xl font-bold italic whitespace-nowrap text-center mb-4 sm:mb-0 sm:text-left">
-                        <Link to="/" className="hover:text-gray-200">Kasper de Jong</Link>
+        <div className="layout-container">
+            <header className="navbar-header">
+                <nav className="navbar-container">
+                    
+                    {/* Column 1: Logo (Left Aligned) */}
+                    <div className="nav-logo">
+                        <Link to="/">Kasper de Jong</Link>
                     </div>
 
-                    <div className="flex flex-row space-x-6 sm:text-xl sm:px-4 z-10 sm:space-x-6 sm:text-2xl">
-                        <Link to="/" className="hover:text-gray-200">Home</Link>
-                        <Link to="/about" className="hover:text-gray-200">About</Link>
-                        <Link to="/projecten" className="hover:text-gray-200">Projecten</Link>
-                        <Link to="/contact" className="hover:text-gray-200">Contact</Link>
+                    {/* Column 2: Nav Tags (Center Aligned) */}
+                    <div className="nav-links">
+                        <Link to="/">Home</Link>
+                        <Link to="/about">About</Link>
+                        <Link to="/projecten">Projecten</Link>
+                        <Link to="/contact">Contact</Link>
                     </div>
+
+                    {/* Column 3: Language Selector (Right Aligned Placeholder) */}
+                    <div className="nav-languages">
+                        <span className="flag-placeholder active" title="Nederlands">🇳🇱</span>
+                        <span className="flag-placeholder" title="English">🇬🇧</span>
+                    </div>
+
                 </nav>
             </header>
 
-            <main className="bg-blue-950">
+            {/* Main content slot where routing sub-pages render */}
+            <main className="main-content-area">
                 <Outlet />
             </main>
         </div>

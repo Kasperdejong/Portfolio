@@ -1,4 +1,4 @@
-import {createBrowserRouter, RouterProvider} from "react-router";
+import { createHashRouter, RouterProvider } from "react-router";
 import Layout from "./Layout.jsx";
 import Home from "./Home.jsx";
 import About from "./About.jsx";
@@ -6,13 +6,14 @@ import NotFound from "./NotFound.jsx";
 import Contact from "./Contact.jsx";
 import Projects from "./Projects.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         element: <Layout/>,
-        children: [{
-            path: '/',
-            element: <Home/>
-        },
+        children: [
+            {
+                index: true,
+                element: <Home/>
+            },
             {
                 path: '/about',
                 element: <About/>
@@ -31,11 +32,7 @@ const router = createBrowserRouter([
             }
         ]
     }
-],
-    {
-        basename: "/Portfolio",
-    }
-);
+]); 
 
 function Routing() {
     return (

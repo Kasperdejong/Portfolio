@@ -1,0 +1,127 @@
+/* ==========================================
+   GLOBAL LAYOUT & CUSTOM NAVBAR
+   ========================================== */
+
+.layout-container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.navbar-header {
+    background-color: #1f2937;
+    /* Dark Gray Base */
+    border-bottom: 2px solid #D99706;
+    /* Matches your gold/amber accents */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+    width: 100%;
+    /* Removes the max-width restriction to span the full window width */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    /* Tightened padding to bring the logo and flags flush with the screen edges */
+    box-sizing: border-box;
+}
+
+/* Column 1: Logo (Left Aligned) */
+.nav-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #dc2626;
+    /* Red-600 */
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #FE840E;
+    /* Orange shadow text effect */
+    white-space: nowrap;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-logo a:hover {
+    color: #ffffff;
+}
+
+/* Column 2: Nav Tags (Center Aligned) */
+.nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #dc2626;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px #FE840E;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    /* Slight hover lift */
+}
+
+/* Column 3: Languages Selector (Right Aligned) */
+.nav-languages {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.flag-placeholder {
+    font-size: 1.5rem;
+    cursor: pointer;
+    filter: grayscale(80%);
+    /* Unselected flags appear slightly muted */
+    transition: filter 0.3s ease-in-out, transform 0.2s ease-in-out;
+    user-select: none;
+}
+
+.flag-placeholder:hover,
+.flag-placeholder.active {
+    filter: grayscale(0%);
+    /* Full color on active/hover */
+    transform: scale(1.15);
+}
+
+/* Main Content area base container */
+.main-content-area {
+    background-color: #0d1b2a;
+    min-height: calc(100vh - 75px);
+    /* Fits exact viewport minus navbar boundary height */
+}
+
+/* Responsive Navbar layout collapsing for Mobile devices */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-logo,
+    .nav-links,
+    .nav-languages {
+        flex: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links {
+        gap: 1.25rem;
+    }
+}
