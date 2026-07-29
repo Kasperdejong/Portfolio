@@ -1,4 +1,187 @@
 /* ==========================================
+   ABOUT PAGE STYLING (PURE CSS REVERT)
+   ========================================== */
+
+.about-header {
+    position: relative;
+    background-image: url('/Portfolio/artsy-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-info-card {
+    background-color: #dc2626;
+    /* bg-red-600 */
+    border: 2px solid #1f2937;
+    /* border-gray-800 border-2 */
+    color: white;
+    /* text-white */
+    padding: 1.5rem;
+    /* p-6 (24px) */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* shadow-lg */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    /* mt-20 (80px) */
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .about-info-card {
+        width: 50%;
+        /* lg:w-1/2 */
+    }
+}
+
+.about-title {
+    color: #ffffff;
+    /* text-white */
+    z-index: 10;
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: bold;
+    padding-bottom: 1rem;
+    /* pb-4 (16px) */
+    filter: drop-shadow(2px 2px 0px black);
+    text-align: center;
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .about-title {
+        font-size: 1.875rem;
+        /* sm:text-3xl */
+    }
+}
+
+@media (min-width: 768px) {
+    .about-title {
+        font-size: 2.25rem;
+        /* md:text-4xl */
+    }
+}
+
+.about-p {
+    font-size: 1.125rem;
+    /* text-lg */
+    text-align: center;
+    max-width: 80rem;
+    /* max-w-7xl */
+    margin-top: 0;
+    margin-bottom: 2rem;
+    /* mb-8 (32px) */
+    padding-left: 1rem;
+    /* px-4 */
+    padding-right: 1rem;
+    line-height: 1.6;
+}
+
+.about-p:last-child {
+    margin-bottom: 0;
+}
+
+.about-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-download-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    /* m-8 (32px) */
+}
+
+/* Button style */
+.about-download-btn {
+    background: linear-gradient(to right, #dc2626, #d97706);
+    /* bg-gradient-to-r from-red-600 to-amber-600 */
+    color: white;
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 0px black);
+    /* drop-shadow-[1px_1px_0px_black] */
+    font-size: 1.25rem;
+    /* text-xl */
+    padding: 1rem 2rem;
+    /* px-8 py-4 */
+    border-radius: 9999px;
+    /* rounded-full */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* shadow-2xl */
+    border: 2px solid black;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.about-download-btn:hover {
+    transform: scale(1.05);
+    /* hover:scale-105 */
+}
+
+.about-cv-title {
+    color: #dc2626;
+    z-index: 10;
+    /* Higher than the blob's z-index */
+    position: relative;
+    /* Enables z-index stacking */
+    font-size: 1.875rem;
+    padding-top: 2rem;
+    font-weight: bold;
+    text-align: center;
+    filter: drop-shadow(2px 2px 0px black);
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .about-cv-title {
+        font-size: 2.25rem;
+        /* md:text-4xl */
+    }
+}
+
+.about-cv-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-cv-image {
+    width: 66.666667%;
+    /* w-2/3 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    height: auto;
+    margin-top: 2.5rem;
+    /* mt-10 (40px) */
+    padding-top: 2.5rem;
+    /* pt-10 */
+    margin-bottom: 2.5rem;
+    /* mb-10 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .about-cv-image {
+        width: 90%;
+    }
+}
+
+/* ==========================================
    ABOUT PAGE BLOB CONFIGURATION
    ========================================== */
 
@@ -15,10 +198,11 @@
 /* Absolute blob centered inside the wrapper */
 .about-blob-container {
     position: absolute;
-    top: 100px;
-    /* Use pixels instead of percentages to shift it down exactly as far as you need */
+    top: 125%;
+    /* Centers the shape directly behind the text */
     left: 50%;
     transform: translate(-50%, -50%);
+    /* Renders behind the text, but above the background artsy-image */
     z-index: 0;
     width: 600px;
     height: 200px;

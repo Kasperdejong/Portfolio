@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Projects.css";
-import Blob3 from "/components/Blob3";
+import Blob3 from "../components/Blob3";
 import ProjectShowcase from "../components/ProjectShowcase";
 import ProjectCarousel from "../components/ProjectCarousel";
 

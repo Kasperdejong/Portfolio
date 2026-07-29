@@ -1,0 +1,415 @@
+/* ==========================================
+   HOMEPAGE STYLING (PURE CSS REVERT)
+   ========================================== */
+
+.home-header {
+    position: relative;
+    background-image: url('/Portfolio/artsy-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Consolidated Blob2 (Top of Homepage behind title) */
+.home-header>svg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    z-index: 1 !important;
+    /* Above background, below header */
+    width: 100% !important;
+    height: 12% !important;
+}
+
+/* Consolidated Home Page main title (merged z-index, relative positioning, and styles) */
+.home-title {
+    color: #dc2626;
+    z-index: 10;
+    position: relative;
+    /* Create stacking context so it sits on top of Blob2 */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 3.5rem;
+    filter: drop-shadow(2px 2px 0px black);
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .home-title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* Intro Row Container */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    /* Mobile stack */
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    max-width: 1280px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+    .intro-container {
+        margin-top: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .intro-container {
+        margin-top: 6rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .intro-container {
+        flex-direction: row;
+    }
+}
+
+/* Intro red info card */
+.intro-card {
+    background-color: #dc2626;
+    border: 2px solid #1f2937;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .intro-card {
+        width: 50%;
+    }
+}
+
+.intro-card-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.intro-card-p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.intro-card-subtitle-pt6 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-top: 1.5rem;
+    margin: 0;
+}
+
+/* ==========================================
+   HOMEPAGE AVATAR & SPEECH BUBBLE
+   ========================================== */
+
+.profile-avatar-link {
+    text-decoration: none;
+    display: inline-block;
+    flex-shrink: 0;
+    width: 10rem;
+    height: 10rem;
+    aspect-ratio: 1 / 1;
+    /* Locks the box to a perfect square to prevent ovals */
+}
+
+.profile-avatar-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    /* Locks the box to a perfect square to prevent ovals */
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    background-image: url('/Portfolio/Closeupfoto.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 3px solid black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    aspect-ratio: 1 / 1;
+    /* Locks the box to a perfect square to prevent ovals */
+}
+
+.profile-avatar-container:hover .profile-avatar {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(254, 132, 14, 0.5);
+}
+
+/* Responsive sizes for profile picture container */
+@media (min-width: 640px) {
+    .profile-avatar-link {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-avatar-link {
+        width: 14rem;
+        height: 14rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .profile-avatar-link {
+        width: 18rem;
+        height: 18rem;
+    }
+}
+
+.profile-bubble {
+    display: block;
+    position: absolute;
+    top: -45px;
+    left: 55%;
+    width: 160px;
+    max-width: none;
+    z-index: 100;
+    pointer-events: none;
+    animation: popInBubbleRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@media (min-width: 640px) {
+    .profile-bubble {
+        top: -50px;
+        left: 70%;
+        width: 190px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .profile-bubble {
+        top: -60px;
+        left: 75%;
+        width: 220px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .profile-bubble {
+        left: 90%;
+        width: 240px;
+    }
+}
+
+@keyframes popInBubbleRight {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+/* ==========================================
+   SKILLS ROW SECTION
+   ========================================== */
+
+.skills-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Consolidated Blob (Behind "Mijn Skills" header) */
+.skills-container>svg {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1 !important;
+    /* Behind text, above background */
+    width: 600px !important;
+    height: 200px !important;
+}
+
+@media (min-width: 640px) {
+    .skills-container>svg {
+        top: 10px !important;
+    }
+}
+
+/* Consolidated Skills main title (merged z-index, relative positioning, and styles) */
+.skills-main-title {
+    color: #dc2626;
+    z-index: 10;
+    position: relative;
+    /* Create stacking context so it sits on top of Blob */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    filter: drop-shadow(2px 2px 0px black);
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .skills-main-title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .skills-main-title {
+        font-size: 2.25rem;
+    }
+}
+
+.skills-section-wrapper {
+    margin-bottom: 2rem;
+    width: 91.666667%;
+}
+
+@media (min-width: 768px) {
+    .skills-section-wrapper {
+        width: 75%;
+    }
+}
+
+.skills-category-title {
+    color: #dc2626;
+    filter: drop-shadow(1px 1px 0px black);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .skills-category-title {
+        font-size: 1.5rem;
+    }
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: #1f2937;
+    color: #f97316;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+.skill-card p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.skill-card-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #dc2626;
+    animation: progressLine 2s linear infinite;
+}
+
+@keyframes progressLine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+@media (min-width: 640px) {
+    .skill-icon {
+        font-size: 1.875rem;
+    }
+}
+
+.skill-icon.html {
+    color: #f97316;
+}
+
+.skill-icon.js {
+    color: #eab308;
+}
+
+.skill-icon.react {
+    color: #3b82f6;
+}
+
+.skill-icon.tailwind {
+    color: #2dd4bf;
+}
+
+.skill-icon.php {
+    color: #6366f1;
+}
+
+.skill-icon.laravel {
+    color: #dc2626;
+}
+
+.skill-icon.mongodb {
+    color: #4ade80;
+}
+
+.skill-icon.sql {
+    color: #60a5fa;
+}

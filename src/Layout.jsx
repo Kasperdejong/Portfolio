@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router"; // useLocation is no longer needed here
+import { Link, NavLink, Outlet } from "react-router"; // Imported NavLink
 import "./Layout.css";
 
 function Layout() {
@@ -7,17 +7,17 @@ function Layout() {
             <header className="navbar-header">
                 <nav className="navbar-container">
                     
-                    {/* Column 1: Logo (Left Aligned) */}
+                    {/* Column 1: Logo (Left Aligned) - Kept as a standard Link */}
                     <div className="nav-logo">
                         <Link to="/" viewTransition>Kasper de Jong</Link>
                     </div>
 
-                    {/* Column 2: Nav Tags (Center Aligned) */}
+                    {/* Column 2: Nav Tags (Center Aligned) - Switched to NavLink */}
                     <div className="nav-links">
-                        <Link to="/" viewTransition>Home</Link>
-                        <Link to="/about" viewTransition>About</Link>
-                        <Link to="/projecten" viewTransition>Projecten</Link>
-                        <Link to="/contact" viewTransition>Contact</Link>
+                        <NavLink to="/" viewTransition>Home</NavLink>
+                        <NavLink to="/about" viewTransition>About</NavLink>
+                        <NavLink to="/projecten" viewTransition>Projecten</NavLink>
+                        <NavLink to="/contact" viewTransition>Contact</NavLink>
                     </div>
 
                     {/* Column 3: Language Selector */}
@@ -29,10 +29,6 @@ function Layout() {
                 </nav>
             </header>
 
-            {/* 
-              We no longer need to force React to unmount/remount the layout main wrapper. 
-              The browser will capture and transition the changes natively on the screen.
-            */}
             <main className="main-content-area">
                 <Outlet />
             </main>
