@@ -8,16 +8,17 @@
     justify-content: center;
     flex-direction: column;
 
-    /* Updated spacing: No top padding, 1rem on sides, 2.5rem at the bottom */
+    /* Spacing: No top padding, 1rem on sides, 2.5rem at the bottom */
     padding: 0 1rem 1.5rem 1rem;
 
     box-sizing: border-box;
     border-radius: 1.5rem;
     border: 2px solid #D99706;
+    /* Original orange/gold border remains */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
     /* Smooth 1s background transition */
-    transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out, border-color 1s ease-in-out;
 }
 
 .carousel-content-area {
@@ -150,4 +151,31 @@
     .next-btn {
         right: 15px;
     }
+}
+
+/* ==========================================
+   MUSICCAVE OUTER CAROUSEL CONTAINER STYLES
+   ========================================== */
+
+/* Outer slide container swaps the original orange/gold border to purple */
+.project-carousel-wrapper.theme-wrapper-musiccave {
+    border-color: #6a0dad;
+    /* Outer border changes directly to purple */
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.4);
+}
+
+/* Nav navigation arrows outline switches to Spotify Green */
+.project-carousel-wrapper.theme-wrapper-musiccave .carousel-btn {
+    border-color: #1db954;
+}
+
+.project-carousel-wrapper.theme-wrapper-musiccave .carousel-btn:hover {
+    background-color: #1db954;
+    color: #121212;
+}
+
+/* Active navigation dot matches deep purple */
+.project-carousel-wrapper.theme-wrapper-musiccave .carousel-dot.active-dot {
+    background-color: #6a0dad;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.6);
 }

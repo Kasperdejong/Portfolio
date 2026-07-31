@@ -38,10 +38,11 @@ const ProjectCarousel = ({ children }) => {
 
     const activeChild = childrenArray[currentIndex];
     const activeBgColor = activeChild?.props?.bgColor || "#1f2937";
+    const activeTheme = activeChild?.props?.theme || ""; // Extract theme name
 
     return (
         <div 
-            className="project-carousel-wrapper"
+            className={`project-carousel-wrapper ${activeTheme ? `theme-wrapper-${activeTheme}` : ""}`}
             style={{ backgroundColor: activeBgColor }}
         >
             <button className="carousel-btn prev-btn" onClick={handlePrev} aria-label="Vorige project">

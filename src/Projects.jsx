@@ -50,18 +50,27 @@ function Projects() {
                     <div className="project-year-section">
                         <h3 className="year-section-title">Jaar 3 Projecten</h3>
                         <ProjectCarousel>
-                            <ProjectShowcase
-                                title="🚀 [Jaar 3 Project 1] 🚀"
-                                bgColor="#1E1B4B"
+                           <ProjectShowcase
+                                title="🎶MusicCave🎶"
+                                bgColor="#1a1a1a" /* Matches --bg-secondary */
+                                theme="musiccave" /* Triggers custom brand styling */
                                 images={[
-                                    "/Portfolio/construction.png",
-                                    "/Portfolio/construction.png",
-                                    "/Portfolio/construction.png",
-                                    "/Portfolio/construction.png",
+                                    "/Portfolio/MusicCaveVideo.mp4", 
+                                    "/Portfolio/MusicCave1.png",
+                                    "/Portfolio/MusicCave2.png",
+                                    "/Portfolio/MusicCave3.png",
+                                    "/Portfolio/MusicCave4.png",
+                                    "/Portfolio/MusicCave5.png",
+                                    "/Portfolio/MusicCave6.png",
+                                    "/Portfolio/MusicCave7.png",
                                 ]}
                                 description="Dit is een tijdelijke plek voor je belangrijkste Jaar 3 project. Vervang de afbeeldingen, deze tekst, de achtergrondkleur en de vaardigheden hieronder om je nieuwe stage- of schoolwerk te laten zien."
-                                projectLink="#"
-                                skills={["React", "Vite", "HTML/CSS"]}
+                                links={[
+                                    { label: "Bekijk het project", url: "https://music-cave.vercel.app/" },
+                                    { label: "Instructie website", url: "https://kasperdejong.github.io/MusicCave-website/" }, 
+                                    { label: "Chrome extensie", url: "https://chromewebstore.google.com/detail/musiccave/eldnapkjmgljbmdgainoefmpompdjmdh" }
+                                ]}
+                                skills={["Fullstack", "React", "Chrome-extension", "Supabase", "Web-injections"]}
                             />
 
                             <ProjectShowcase
@@ -75,7 +84,7 @@ function Projects() {
                                 ]}
                                 description="Dit is een tijdelijke plek voor je tweede Jaar 3 project. Handig voor grotere opdrachten of creatieve CMGT-oplossingen die je dit jaar hebt ontworpen."
                                 projectLink="#"
-                                skills={["Laravel", "PHP", "SQL"]}
+                                skills={["React","Chrome-extension","Supabase", "Fullstack", "Web-injections"]}
                             />
 
                             <ProjectShowcase

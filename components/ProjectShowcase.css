@@ -1,3 +1,7 @@
+/* ==========================================
+   PROJECT SHOWCASE LAYOUT (BASE CARD)
+   ========================================== */
+
 .project-showcase-wrapper-card {
     display: flex;
     justify-content: center;
@@ -18,6 +22,7 @@
     transition: background-color 1s ease-in-out;
 }
 
+/* Sizing and subtle shadow for the construction gif */
 .construction-gif-wrapper {
     display: flex;
     justify-content: center;
@@ -26,7 +31,6 @@
     width: 100%;
 }
 
-/* Sizing and subtle shadow for the construction gif */
 .construction-gif {
     max-width: 140px;
     /* Restricts the size so it fits well inside the box */
@@ -54,21 +58,80 @@
     min-height: 0;
 }
 
-/* Left Column (Visuals) */
+/* ==========================================
+   LEFT COLUMN (VISUALS & CAROUSEL)
+   ========================================== */
+
 .showcase-visual-side {
-    flex: 1.2;
+    flex: 1.5;
+    /* Expanded visual side to make video area larger */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* Pushes items to group tightly from the top */
     height: 100%;
 }
 
+/* Sized dynamically to keep images prominent on desktop and accommodate links */
 .showcase-visual-side .image-carousel {
-    flex-grow: 1;
-    max-height: calc(100% - 45px);
-    /* Adjusted to match the taller content area */
-    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+    width: 100%;
+    max-height: calc(100% - 90px);
+    margin-bottom: 0;
+    /* Margin is now cleanly managed by the link wrappers below */
 }
+
+/* Force border-radius containment directly on media elements to prevent video clipping */
+.image-carousel img,
+.image-carousel video {
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+/* ==========================================
+   GLOBAL LINK FORMATTING & HOVER UNDERLINE
+   ========================================== */
+
+.project-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.15rem;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.project-link:hover {
+    color: #3b82f6;
+    text-decoration: none !important;
+    /* Disables standard browser underlines across all links */
+}
+
+/* Global sliding underline hover effect */
+.project-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    /* Dynamically inherits standard blue OR brand green */
+    transform-origin: bottom right;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* ==========================================
+   SINGLE LINK FALLBACK
+   ========================================== */
 
 .project-link-wrapper {
     display: flex;
@@ -76,11 +139,34 @@
     align-items: center;
     height: 35px;
     flex-shrink: 0;
+    margin-top: 1.25rem;
+    /* Locks the single link directly below the images/video */
 }
 
-/* Right Column (Details) */
+/* ==========================================
+   NEW 2x2 COMPACT GRID LINKS WRAPPER
+   ========================================== */
+
+.project-links-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* Two balanced columns */
+    gap: 0.75rem 4rem;
+    /* Compact vertical gap; comfortable horizontal gap */
+    justify-content: center;
+    /* Center the grid */
+    flex-shrink: 0;
+    margin-top: 1.25rem;
+    /* Locks the 2x2 link block directly below the images/video */
+}
+
+/* ==========================================
+   RIGHT COLUMN (DETAILS & SKILLS)
+   ========================================== */
+
 .showcase-info-side {
-    flex: 1;
+    flex: 0.85;
+    /* Slightly narrower description side to prioritize video size */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -126,21 +212,6 @@
     margin: 0;
 }
 
-.project-link {
-    color: #60a5fa;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: color 1s ease-in-out;
-    /* Transition set to 1s */
-    font-size: 1.1rem;
-}
-
-.project-link:hover {
-    color: #3b82f6;
-    text-decoration: underline;
-}
-
 .skills-section {
     flex-shrink: 0;
     margin-bottom: 0;
@@ -164,11 +235,84 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* ==========================================
+   MUSICCAVE BRAND THEME SPECIFIC STYLES
+   ========================================== */
+
+/* Outer showcase container styling */
+.project-showcase-container.theme-musiccave {
+    border: none;
+    /* Removed inner purple border to preserve outer main container style */
+    box-shadow: none;
+    /* Flat design blending seamlessly into the carousel wrapper */
+}
+
+/* Title shadow overrides */
+.project-showcase-container.theme-musiccave .project-title {
+    text-shadow: 2px 2px 0px #6a0dad;
+}
+
+/* Green headers */
+.project-showcase-container.theme-musiccave .section-subtitle {
+    color: #1db954;
+    /* Spotify green */
+}
+
+/* Custom scrollbar matching */
+.project-showcase-container.theme-musiccave .description-box::-webkit-scrollbar-thumb {
+    background: #6a0dad;
+}
+
+/* Link overrides */
+.project-showcase-container.theme-musiccave .project-link {
+    color: #1db954;
+    /* Green links */
+}
+
+.project-showcase-container.theme-musiccave .project-link:hover {
+    color: #1ed760;
+    /* Brighter green on hover */
+}
+
+/* Skill badges matching style */
+.project-showcase-container.theme-musiccave .skill-badge {
+    background-color: #6a0dad;
+    /* Purple skill tag background */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Carousel borders while nested inside the MusicCave theme wrapper */
+.project-showcase-container.theme-musiccave .image-carousel {
+    border-color: #6a0dad;
+    /* Purple image borders */
+}
+
+.project-showcase-container.theme-musiccave .img-carousel-btn:hover {
+    background: #6a0dad;
+    /* Purple hover state for slides layout */
+    color: #ffffff;
+}
+
+/* ==========================================
+   MOBILE & RESPONSIVE ADAPTATIONS
+   ========================================== */
+
+/* Automatically shifts to a clean vertical column list on tablet/mobile viewports */
+@media (max-width: 1024px) {
+    .project-links-wrapper {
+        grid-template-columns: 1fr;
+        /* Single column on narrow screens */
+        gap: 0.8rem;
+        margin-top: 1rem;
+        justify-items: center;
+    }
+}
+
 @media (max-width: 900px) {
     .project-showcase-container {
         height: auto;
         padding: 1.5rem 1rem 1.5rem 1rem;
-        /* Native vertical padding on mobile screens */
     }
 
     .showcase-content-grid {

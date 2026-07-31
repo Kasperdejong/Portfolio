@@ -7,6 +7,13 @@ const ImageCarousel = ({ images }) => {
 
     if (!images || images.length === 0) return null;
 
+    // Helper to identify video assets
+    const isVideo = (path) => {
+        if (typeof path !== "string") return false;
+        const videoExtensions = [".mp4", ".webm", ".ogg", ".mov"];
+        return videoExtensions.some(ext => path.toLowerCase().endsWith(ext));
+    };
+
     const handlePrev = (e) => {
         e.stopPropagation();
         setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -58,18 +65,38 @@ const ImageCarousel = ({ images }) => {
         };
     }, [isModalOpen, images.length]);
 
+    const currentAsset = images[index];
+
     return (
         <>
             <div className="image-carousel" onClick={openModal} title="Klik om te vergroten">
                 <button className="img-carousel-btn prev" onClick={handlePrev} aria-label="Vorige afbeelding">
                     &#10094;
                 </button>
-                <img 
-                    key={index} /* Forces fade animation on index swap */
-                    src={images[index]} 
-                    alt={`Project screenshot ${index + 1}`} 
-                    className="carousel-image-display" 
-                />
+                
+                {isVideo(currentAsset) ? (
+                    <video 
+                        key={index}
+                        src={currentAsset} 
+                        className="carousel-image-display" 
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        /* 
+                          No standard controls or click propagation stops here. 
+                          This turns the video into an animated preview that triggers the modal on click.
+                        */
+                    />
+                ) : (
+                    <img 
+                        key={index} /* Forces fade animation on index swap */
+                        src={currentAsset} 
+                        alt={`Project screenshot ${index + 1}`} 
+                        className="carousel-image-display" 
+                    />
+                )}
+
                 <button className="img-carousel-btn next" onClick={handleNext} aria-label="Volgende afbeelding">
                     &#10095;
                 </button>
@@ -89,12 +116,28 @@ const ImageCarousel = ({ images }) => {
                     </button>
                     
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-                        <img 
-                            key={index} /* Forces zoom-fade on navigation index change */
-                            src={images[index]} 
-                            alt={`Project screenshot vergroot ${index + 1}`} 
-                            className="lightbox-image"
-                        />
+                        {isVideo(currentAsset) ? (
+                            <video 
+                                key={index}
+                                src={currentAsset} 
+                                className="lightbox-image"
+                                controls
+                                autoPlay
+                                loop
+                                playsInline
+                                /* 
+                                  Sound (muted is omitted) and full player controls 
+                                  are active in the lightbox view.
+                                */
+                            />
+                        ) : (
+                            <img 
+                                key={index} /* Forces zoom-fade on navigation index change */
+                                src={currentAsset} 
+                                alt={`Project screenshot vergroot ${index + 1}`} 
+                                className="lightbox-image"
+                            />
+                        )}
                     </div>
 
                     <button className="lightbox-nav lightbox-next" onClick={handleModalNext} aria-label="Volgende afbeelding">
