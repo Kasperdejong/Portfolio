@@ -147,8 +147,8 @@ function Projects() {
                                 }
                                 bgColor="#064E3B"
                                 images={[
-                                    "/Portfolio/Armadillo-full.mov",
-                                    "/Portfolio/Armadillowithsound.mov",
+                                    "/Portfolio/Armadillo-Newest-Withsound.mp4",
+                                    "/Portfolio/Armadillowithsound.mp4",
                                     "/Portfolio/Armadillo-indevelopment.png",
                                     "/Portfolio/Armadillo-1.png",
                                     "/Portfolio/Armadillo-2.png",
@@ -156,8 +156,6 @@ function Projects() {
                                 ]}
                                 description={
                                     <div>
-                                        Zorg dat geluid werkt met de video!!!
-                                        <br /><br />
                                         Dit is een stageproject waarmee ik mediapipe's handtracking toepas om een MVP te creëren waarmee MCW (Mijn stagebedrijf) naar een opdrachtgever kan gaan om door middel van deze creative experience een leuk project neer te zetten voor gebarentaal. Dit project kwam voort uit onderzoek wat ik eerder had gedaan met een kinect dieptecamera en een poppenkast applicatie die ik eerder had gemaakt samen met veel andere creatieve demo's, om mijn stage ervan te overtuigen dat hier werk in te vinden valt. Ook heb ik mijn kennis toegepast van het{" "}
                                         <button 
                                             type="button"
@@ -216,6 +214,19 @@ function Projects() {
                     <div id="jaar2-section" className="project-year-section">
                         <h3 className="year-section-title">Jaar 2 Projecten</h3>
                         <ProjectCarousel>
+                             <ProjectShowcase
+                                title="🎮 Gamevault 🔒"
+                                bgColor="#020079"
+                                images={[
+                                    "/Portfolio/gameVault1.png",
+                                    "/Portfolio/gameVault2.png",
+                                    "/Portfolio/gameVault3.png",
+                                    "/Portfolio/gameVault4.png",
+                                ]}
+                                description="Hier ging ik voor het eerst aan de slag met Laravel. De naam of het project is Gamevault. Ik wilde een website maken waar gebruikers hun favoriete games kunnen delen met elkaar. Laravel was een erg fijn framework om mee te werken. Het heeft een hele fijne mappenstructuur wat goed is voor het overzicht en door de ORM van Laravel is het ook heel makkelijk om met de database te werken. Ook heb ik hier voor het eerst met een Bootstrap carousel gewerkt wat een hele leuke toevoeging was aan de website. Het zag er gelijk een struk beter uit."
+                                skills={["Laravel", "Tailwind CSS", "Javascript", "PHP", "MySQL", "Bootstrap", "HTML/CSS"]}
+                            />
+
                             <ProjectShowcase
                                 title="👐 JazzHands 👐"
                                 images={[
@@ -240,19 +251,6 @@ function Projects() {
                                 ]}
                                 description="Dit project heb ik samen met 4 anderen gemaakt voor het keuzevak gebarentaal bij intake of de Hogeschool Rotterdam, en ik zat in het frontend team. Wij hadden ook een backend team die de database regelde en alle gebaren naar data omzette. Wij haalden deze data op en hebben een website gemaakt die de studenten die het keuzevak volgen kunnen gebruiken om alle stof uit het werkboek te leren op een leuke manier. Ik heb de homepage, flitskaarten en lessen pagina gemaakt. En ook nog meegeholpen aan de rest van de pagina's gewerkt natuurlijk. Wij hadden origineel een heel leuk idee voor deze app. Het heette SignWitch en het was een woordgrap met sandwitch and sign language. We wilden ook het een leuk paars kleurenthema geven en een heks die een sandwitch maakt waarbij elke opdracht die je deed een ander ingredient toevoegde aan de sandwitch. De opdrachtgever wilden iets serieuzer, dus hebben we de website een complete overhaul gegeven naar een Hogeschool Rotterdam thema met minder gamification. Ik kan dus mijn creativiteit loslaten maar als dat niet kan word er nogsteeds een zeer goed product neergezet. En als laatste is de achtergrond hier een donkerpaars als ode naar Signwitch. Dit project heeft geen link, omdat het alleen beschikbaar is voor de studenten van het keuzevak. De rest wordt er gelijk afgetrapt."
                                 skills={["React", "Vite", "Tailwind CSS", "HTML/CSS"]}
-                            />
-
-                            <ProjectShowcase
-                                title="🎮 Gamevault 🔒"
-                                bgColor="#020079"
-                                images={[
-                                    "/Portfolio/gameVault1.png",
-                                    "/Portfolio/gameVault2.png",
-                                    "/Portfolio/gameVault3.png",
-                                    "/Portfolio/gameVault4.png",
-                                ]}
-                                description="Hier ging ik voor het eerst aan de slag met Laravel. De naam of het project is Gamevault. Ik wilde een website maken waar gebruikers hun favoriete games kunnen delen met elkaar. Laravel was een erg fijn framework om mee te werken. Het heeft een hele fijne mappenstructuur wat goed is voor het overzicht en door de ORM van Laravel is het ook heel makkelijk om met de database te werken. Ook heb ik hier voor het eerst met een Bootstrap carousel gewerkt wat een hele leuke toevoeging was aan de website. Het zag er gelijk een struk beter uit."
-                                skills={["Laravel", "Tailwind CSS", "Javascript", "PHP", "MySQL", "Bootstrap", "HTML/CSS"]}
                             />
 
                             <ProjectShowcase
