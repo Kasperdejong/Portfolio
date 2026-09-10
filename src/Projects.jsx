@@ -155,7 +155,7 @@ function Projects() {
                                     "/Portfolio/Armadillo-3.png",
                                 ]}
                                 description={
-                                    <div>
+                                    <div> 
                                         Dit is een stageproject waarmee ik mediapipe's handtracking toepas om een MVP te creëren waarmee MCW (Mijn stagebedrijf) naar een opdrachtgever kan gaan om door middel van deze creative experience een leuk project neer te zetten voor gebarentaal. Dit project kwam voort uit onderzoek wat ik eerder had gedaan met een kinect dieptecamera en een poppenkast applicatie die ik eerder had gemaakt samen met veel andere creatieve demo's, om mijn stage ervan te overtuigen dat hier werk in te vinden valt. Ook heb ik mijn kennis toegepast van het{" "}
                                         <button 
                                             type="button"
