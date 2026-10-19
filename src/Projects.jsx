@@ -223,7 +223,7 @@ function Projects() {
                                     "/Portfolio/gameVault3.png",
                                     "/Portfolio/gameVault4.png",
                                 ]}
-                                description="Hier ging ik voor het eerst aan de slag met Laravel. De naam of het project is Gamevault. Ik wilde een website maken waar gebruikers hun favoriete games kunnen delen met elkaar. Laravel was een erg fijn framework om mee te werken. Het heeft een hele fijne mappenstructuur wat goed is voor het overzicht en door de ORM van Laravel is het ook heel makkelijk om met de database te werken. Ook heb ik hier voor het eerst met een Bootstrap carousel gewerkt wat een hele leuke toevoeging was aan de website. Het zag er gelijk een struk beter uit."
+                                description="Hier ging ik voor het eerst aan de slag met Laravel. De naam van het project is Gamevault. Ik wilde een website maken waar gebruikers hun favoriete games kunnen delen met elkaar. Laravel was een erg fijn framework om mee te werken. Het heeft een hele fijne mappenstructuur wat goed is voor het overzicht en door de ORM van Laravel is het ook heel makkelijk om met de database te werken. Ook heb ik hier voor het eerst met een Bootstrap carousel gewerkt wat een hele leuke toevoeging was aan de website. Het zag er gelijk een struk beter uit."
                                 skills={["Laravel", "Tailwind CSS", "Javascript", "PHP", "MySQL", "Bootstrap", "HTML/CSS"]}
                             />
 
