@@ -1,5 +1,5 @@
 /* ==========================================
-   HOMEPAGE STYLING (PURE CSS REVERT)
+   HOMEPAGE STYLING
    ========================================== */
 
 .home-header {
@@ -15,26 +15,24 @@
     align-items: center;
 }
 
-/* Consolidated Blob2 (Top of Homepage behind title) */
-.home-header>svg {
+/* Blob 2: lowered and scaled to cover the title */
+.home-header>svg:first-of-type {
     position: absolute !important;
-    top: 0 !important;
+    top: 25px !important;
     left: 0 !important;
     right: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin: 0 auto !important;
     z-index: 1 !important;
-    /* Above background, below header */
     width: 100% !important;
-    height: 12% !important;
+    height: 135px !important;
+    pointer-events: none;
 }
 
-/* Consolidated Home Page main title (merged z-index, relative positioning, and styles) */
+/* Home Page main title */
 .home-title {
     color: #dc2626;
     z-index: 10;
     position: relative;
-    /* Create stacking context so it sits on top of Blob2 */
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -59,7 +57,6 @@
 .intro-container {
     display: flex;
     flex-direction: column;
-    /* Mobile stack */
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
@@ -136,7 +133,6 @@
     width: 10rem;
     height: 10rem;
     aspect-ratio: 1 / 1;
-    /* Locks the box to a perfect square to prevent ovals */
 }
 
 .profile-avatar-container {
@@ -146,7 +142,6 @@
     height: 100%;
     flex-shrink: 0;
     aspect-ratio: 1 / 1;
-    /* Locks the box to a perfect square to prevent ovals */
 }
 
 .profile-avatar {
@@ -160,7 +155,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     aspect-ratio: 1 / 1;
-    /* Locks the box to a perfect square to prevent ovals */
 }
 
 .profile-avatar-container:hover .profile-avatar {
@@ -168,7 +162,6 @@
     box-shadow: 0 10px 25px rgba(254, 132, 14, 0.5);
 }
 
-/* Responsive sizes for profile picture container */
 @media (min-width: 640px) {
     .profile-avatar-link {
         width: 12rem;
@@ -249,15 +242,15 @@
     align-items: center;
 }
 
-/* Consolidated Blob (Behind "Mijn Skills" header) */
+/* Blob behind "Mijn Skills" title */
 .skills-container>svg {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 1 !important;
-    /* Behind text, above background */
     width: 600px !important;
     height: 200px !important;
+    pointer-events: none;
 }
 
 @media (min-width: 640px) {
@@ -266,12 +259,10 @@
     }
 }
 
-/* Consolidated Skills main title (merged z-index, relative positioning, and styles) */
 .skills-main-title {
     color: #dc2626;
     z-index: 10;
     position: relative;
-    /* Create stacking context so it sits on top of Blob */
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -303,21 +294,50 @@
     }
 }
 
+/* Category Title Wrapper */
+.category-title-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+/* Blob 3: Skinny, wide smear covering the text */
+.category-blob-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    /* Wide enough to cover the words */
+    max-width: 90vw;
+    height: 70px;
+    /* Skinny vertical profile */
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+.category-blob-bg svg {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Category Title: Centered and readable over the smear */
 .skills-category-title {
+    position: relative;
+    z-index: 1;
     color: #dc2626;
-    filter: drop-shadow(1px 1px 0px black);
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    text-shadow: 1px 1px 0px #FE840E;
+    filter: drop-shadow(2px 2px 0px black);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.2rem 1.4rem;
 }
 
-@media (min-width: 640px) {
-    .skills-category-title {
-        font-size: 1.5rem;
-    }
-}
-
+/* Skills Cards Grid */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -351,6 +371,7 @@
     text-align: center;
 }
 
+/* Animated Top Line on Skill Cards */
 .skill-card-progress {
     position: absolute;
     top: 0;
@@ -373,43 +394,14 @@
 
 .skill-icon {
     font-size: 1.5rem;
-    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
 }
 
 @media (min-width: 640px) {
     .skill-icon {
         font-size: 1.875rem;
     }
-}
-
-.skill-icon.html {
-    color: #f97316;
-}
-
-.skill-icon.js {
-    color: #eab308;
-}
-
-.skill-icon.react {
-    color: #3b82f6;
-}
-
-.skill-icon.tailwind {
-    color: #2dd4bf;
-}
-
-.skill-icon.php {
-    color: #6366f1;
-}
-
-.skill-icon.laravel {
-    color: #dc2626;
-}
-
-.skill-icon.mongodb {
-    color: #4ade80;
-}
-
-.skill-icon.sql {
-    color: #60a5fa;
 }

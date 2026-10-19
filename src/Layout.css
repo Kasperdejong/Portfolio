@@ -11,16 +11,14 @@
    SMOOTH PAGE TRANSITIONS
    ========================================== */
 
-   ::view-transition-old(root),
-   ::view-transition-new(root) {
-       animation-duration: 0.4s;
-       /* Controls transition speed (adjust higher to make it slower/softer) */
-       animation-timing-function: ease-in-out;
-   }
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+}
 
 .page-fade {
     animation: pageEnter 0.4s ease-in-out forwards;
-    /* Soft 0.4s fade-in with no slide up */
     will-change: opacity;
 }
 
@@ -39,6 +37,8 @@
     border-bottom: 2px solid #D99706;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 100000;
 }
 
 .navbar-container {
@@ -62,10 +62,8 @@
     font-weight: bold;
     font-style: italic;
     color: #dc2626;
-    /* Red-600 */
     text-decoration: none;
     text-shadow: 1px 1px 0px #FE840E;
-    /* Orange shadow text effect */
     white-space: nowrap;
     transition: color 0.3s ease-in-out;
 }
@@ -86,7 +84,6 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #dc2626;
-    /* Original bright red */
     text-decoration: none;
     text-shadow: 1px 1px 0px #FE840E;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -99,35 +96,49 @@
 
 .nav-links a.active {
     color: #991b1b;
-    /* Rich, darker red tint */
-
-    /* 
-      Multi-directional shadow: Creates a clean 1px text outline 
-      around the active letters for legibility.
-    */
     text-shadow:
         -1px -1px 0 #000000,
         1px -1px 0 #000000,
         -1px 1px 0 #000000,
         1px 1px 0 #000000;
-
     pointer-events: none;
-    /* Prevents cursor action on the already selected tab */
 }
 
-/* Column 3: Languages Selector (Right Aligned) */
+/* Column 3: Languages & Bloop Selector (Right Aligned) */
 .nav-languages {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 0.75rem;
+}
+
+/* Bloop text button: pure text, exact same style as nav links */
+.nav-bloop-text {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #dc2626;
+    text-shadow: 1px 1px 0px #FE840E;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-bloop-text:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-bloop-text.active {
+    color: #FE840E;
+    text-shadow: 1px 1px 0px #000000;
 }
 
 .flag-placeholder {
     font-size: 1.5rem;
     cursor: pointer;
     filter: grayscale(80%);
-    /* Unselected flags appear slightly muted */
     transition: filter 0.3s ease-in-out, transform 0.2s ease-in-out;
     user-select: none;
 }
@@ -135,11 +146,10 @@
 .flag-placeholder:hover,
 .flag-placeholder.active {
     filter: grayscale(0%);
-    /* Full color on active/hover */
     transform: scale(1.15);
 }
 
-/* Main Content area base container */
+/* Main Content Area */
 .main-content-area {
     background-image: url('/Portfolio/artsy-background.jpg');
     background-size: cover;
@@ -149,7 +159,7 @@
     position: relative;
 }
 
-/* Responsive Navbar layout collapsing for Mobile devices */
+/* Responsive Navbar layout for mobile */
 @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;

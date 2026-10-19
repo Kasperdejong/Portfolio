@@ -1,26 +1,46 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { FaHtml5, FaJs, FaReact, FaNodeJs, FaPhp } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiLaravel, SiMysql } from 'react-icons/si';
+import { 
+    FaHtml5, 
+    FaJs, 
+    FaReact, 
+    FaNodeJs, 
+    FaPhp, 
+    FaPython 
+} from 'react-icons/fa';
+import { 
+    SiTailwindcss, 
+    SiSupabase, 
+    SiLaravel, 
+    SiMysql, 
+    SiElectron, 
+    SiVite 
+} from 'react-icons/si';
 import Blob from "/components/Blob";
 import Blob2 from "/components/Blob2";
-import "./Home.css"; // Imports Home.css (containing your standard avatar and bubble rules)
+import Blob3 from "/components/Blob3";
+import "./Home.css";
 
 function Home() {
     const [isAvatarHovered, setIsAvatarHovered] = useState(false);
 
+    // Each skill with its official brand color
     const frontendSkills = [
-        { name: 'HTML/CSS', icon: <FaHtml5 className="skill-icon html" /> },
-        { name: 'JavaScript', icon: <FaJs className="skill-icon js" /> },
-        { name: 'ReactJS', icon: <FaReact className="skill-icon react" /> },
-        { name: 'TailwindCSS', icon: <SiTailwindcss className="skill-icon tailwind" /> },
+        { name: 'HTML/CSS', icon: <FaHtml5 />, color: '#E34F26' },
+        { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
+        { name: 'ReactJS', icon: <FaReact />, color: '#61DAFB' },
+        { name: 'TailwindCSS', icon: <SiTailwindcss />, color: '#06B6D4' },
+        { name: 'Vite', icon: <SiVite />, color: '#646CFF' },
     ];
 
     const backendSkills = [
-        { name: 'PHP', icon: <FaPhp className="skill-icon php" /> },
-        { name: 'Laravel', icon: <SiLaravel className="skill-icon laravel" /> },
-        { name: 'MongoDB', icon: <SiMongodb className="skill-icon mongodb" /> },
-        { name: 'SQL', icon: <SiMysql className="skill-icon sql" /> },
+        { name: 'PHP', icon: <FaPhp />, color: '#777BB4' },
+        { name: 'Laravel', icon: <SiLaravel />, color: '#FF2D20' },
+        { name: 'Supabase', icon: <SiSupabase />, color: '#3ECF8E' },
+        { name: 'SQL', icon: <SiMysql />, color: '#4479A1' },
+        { name: 'Node.js', icon: <FaNodeJs />, color: '#539E43' },
+        { name: 'Python', icon: <FaPython />, color: '#3776AB' },
+        { name: 'Electron', icon: <SiElectron />, color: '#47848F' },
     ];
 
     return (
@@ -35,15 +55,11 @@ function Home() {
                 <div className="intro-card">
                     <h2 className="intro-card-subtitle">Mijn naam is Kasper</h2>
                     <p className="intro-card-p">
-                        Ik ben een student aan de Hogeschool Rotterdam.
-                        De opleiding die ik doe is CMGT, Creative Media & Game Technologies.
-                        En ben vooral geïnteresseerd in stages waarin ik mijn creativiteit kan uiten.
-                        Ik heb ervaring met React, HTML/CSS, Javascript, PHP, Laravel en Fullstack web development.
+                        Ik ben een student aan de Hogeschool Rotterdam. De opleiding die ik doe is CMGT, Creative Media & Game Technologies. En ben vooral geïnteresseerd in stages waarin ik mijn creativiteit kan uiten. Ik heb ervaring met React, HTML/CSS, Javascript, Python, C#, PHP, Laravel en Fullstack web development.
                     </p>
                     <h2 className="intro-card-subtitle-pt6">Wat zoek ik?</h2>
                     <p className="intro-card-p">
-                        Ik zoek een <b>stage</b> voor <b>frontend development</b>. Het liefst een plek waar ik mijn
-                        creativiteit kan uiten en goed aan de slag kan gaan.
+                        Ik zoek een <b>stage</b> voor <b>full-stack development of creative development</b>. Het liefst een plek waar ik mijn creativiteit kan uiten en goed aan de slag kan gaan.
                     </p>
                 </div>
 
@@ -73,13 +89,25 @@ function Home() {
 
                 {/* Frontend Skills Section */}
                 <div className="skills-section-wrapper">
-                    <h3 className="skills-category-title">Frontend Development</h3>
+                    <div className="category-title-wrapper">
+                        <div className="category-blob-bg">
+                            <Blob3 />
+                        </div>
+                        <h3 className="skills-category-title">Frontend Development</h3>
+                    </div>
+
                     <div className="skills-grid">
                         {frontendSkills.map((skill) => (
                             <Link key={skill.name} to="/projecten" className="no-underline" viewTransition>
                                 <div className="skill-card">
-                                    <div className="skill-card-progress"></div>
-                                    {skill.icon}
+                                    {/* Top line with the corresponding skill color */}
+                                    <div 
+                                        className="skill-card-progress" 
+                                        style={{ backgroundColor: skill.color }}
+                                    ></div>
+                                    <span className="skill-icon" style={{ color: skill.color }}>
+                                        {skill.icon}
+                                    </span>
                                     <p>{skill.name}</p>
                                 </div>
                             </Link>
@@ -89,13 +117,25 @@ function Home() {
 
                 {/* Backend Skills Section */}
                 <div className="skills-section-wrapper">
-                    <h3 className="skills-category-title">Backend Development</h3>
+                    <div className="category-title-wrapper">
+                        <div className="category-blob-bg">
+                            <Blob3 />
+                        </div>
+                        <h3 className="skills-category-title">Backend & Tools</h3>
+                    </div>
+
                     <div className="skills-grid">
                         {backendSkills.map((skill) => (
                             <Link key={skill.name} to="/projecten" className="no-underline" viewTransition>
                                 <div className="skill-card">
-                                    <div className="skill-card-progress"></div>
-                                    {skill.icon}
+                                    {/* Top line with the corresponding skill color */}
+                                    <div 
+                                        className="skill-card-progress" 
+                                        style={{ backgroundColor: skill.color }}
+                                    ></div>
+                                    <span className="skill-icon" style={{ color: skill.color }}>
+                                        {skill.icon}
+                                    </span>
                                     <p>{skill.name}</p>
                                 </div>
                             </Link>

@@ -12,7 +12,7 @@ function About(){
         const fetchCv = async () => {
             try {
                 // Corrected path so it loads successfully under your Portfolio base path
-                const response = await fetch("/Portfolio/digitalecv.json");
+                const response = await fetch("/Portfolio/cv.json");
                 if (!response.ok) {
                     throw new Error("Er is iets mis met het ophalen van de data");
                 }
