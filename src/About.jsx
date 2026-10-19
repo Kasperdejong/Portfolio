@@ -12,7 +12,7 @@ function About(){
         const fetchCv = async () => {
             try {
                 // Corrected path so it loads successfully under your Portfolio base path
-                const response = await fetch("/Portfolio/digitalecv.json");
+                const response = await fetch("/Portfolio/cv2.json");
                 if (!response.ok) {
                     throw new Error("Er is iets mis met het ophalen van de data");
                 }
@@ -40,8 +40,7 @@ function About(){
                         Nu ik beter ben geworden in het programmeren besef ik me dat ik nog zoveel creativiteit kan toepassen in mijn werk, want ik heb altijd al goede ideeën gehad en nu ook de skills om het uit te werken.
                     </p>
                     <p className="about-p">
-                        Na het ervaring opdoen met de verschillende stylen van back-end en front-end development, ben ik erachter gekomen dat ik het meeste ga bereiken als front-end developer. Op het moment ben ik ook aan het leren
-                        om FLstudio te gebruiken om mijn eigen muziek te kunnen maken. Ik speel al 7 jaar basgitaar en ik wil dit met de technologische kennis die ik heb opgebouwd uitbreiden naar het web.
+                        Na het ervaring opdoen met de verschillende stylen van back-end en front-end development, ben ik erachter gekomen dat ik het meeste ga bereiken als full-stack developer. Ik heb al meerdere websites en apps gemaakt en zelfs ervaring opgedaan door het leren van C# en Unity in mijn vrije tijd. Met behulp van AI is nu zoveel nieuwe kennis toegankelijk en valt er zo veel leuks te maken. Zolang ik genoeg tijd heb ben ik ervan overtuigd dat alles haalbaar is op het gebied van programmeren.
                     </p>
                 </div>
 
@@ -66,7 +65,7 @@ function About(){
                     </div>
 
                     <div className="about-cv-image-container">
-                        <img src="/Portfolio/cv.png" alt="cv" className="about-cv-image" />
+                        <img src="/Portfolio/cv-jaar4.png" alt="cv" className="about-cv-image" />
                     </div>
                 </main>
             </header>
