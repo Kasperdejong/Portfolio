@@ -4,11 +4,9 @@
 
 .about-header {
     position: relative;
-    background-image: url('/Portfolio/artsy-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+    background: transparent;
+    /* Removed duplicate background image */
+    min-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;

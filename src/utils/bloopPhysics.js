@@ -19,19 +19,45 @@ export async function toggleBloop() {
     }
 }
 
+export function resetBloop() {
+    if (runner) Matter.Runner.stop(runner);
+    if (engine) Matter.Engine.clear(engine);
+
+    if (overlay && overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
+        overlay = null;
+    }
+
+    hiddenElements.forEach((el) => {
+        el.style.visibility = "";
+    });
+    hiddenElements = [];
+
+    const mainArea = document.querySelector(".main-content-area");
+    if (mainArea) {
+        mainArea.classList.remove("bloop-zoomed");
+    }
+
+    isBlooped = false;
+    isTransitioning = false;
+}
+
 async function startBloop() {
     isTransitioning = true;
 
+    // Added more selectors so more items fall on About, Contact, and Projects!
     const selectors = [
         ".skill-card",
         ".profile-avatar-container",
         ".intro-card",
         ".about-info-card",
         ".about-download-btn",
+        ".about-cv-image-container", // CV Image drops!
         ".contact-info-card",
         ".contact-link",
         ".filter-btn",
-        ".project-showcase-container"
+        ".project-showcase-container",
+        ".notfound-card"
     ].join(", ");
 
     const allElements = Array.from(document.querySelectorAll(selectors));
@@ -97,7 +123,6 @@ async function startBloop() {
 
         const size = unzoomedSizes.get(el) || { width: rect.width * 2, height: rect.height * 2 };
 
-        // Clone the element with its natural internal size so text layout is preserved
         const clone = el.cloneNode(true);
         clone.style.position = "absolute";
         clone.style.left = "0px";
@@ -114,7 +139,6 @@ async function startBloop() {
         const centerX = rect.left + rect.width / 2;
         const centerY = startTop + rect.height / 2;
 
-        // Position clone centered at 50% scale initially
         clone.style.transform = `translate3d(${centerX - size.width / 2}px, ${centerY - size.height / 2}px, 0) scale(0.5)`;
 
         // Avatar hover bubble support
@@ -141,7 +165,6 @@ async function startBloop() {
         el.style.visibility = "hidden";
         hiddenElements.push(el);
 
-        // Half-size collision body (50% dimensions)
         const halfWidth = size.width * 0.5;
         const halfHeight = size.height * 0.5;
         const isRound = el.classList.contains("profile-avatar-container") || el.classList.contains("contact-link");
@@ -224,7 +247,7 @@ async function startBloop() {
         dragStartPos = null;
     });
 
-    // 7. Physics loop (Locks elements to half size scale(0.5) while bouncing!)
+    // 7. Physics loop (Locks elements to half size scale(0.5) while bouncing)
     runner = Runner.create();
     Runner.run(runner, engine);
 
@@ -236,7 +259,6 @@ async function startBloop() {
             const origW = body.origWidth;
             const origH = body.origHeight;
 
-            // Keeps card centered on physics body, rotated, and scaled to 50%
             el.style.transform = `translate3d(${x - origW / 2}px, ${y - origH / 2}px, 0) rotate(${angle}rad) scale(0.5)`;
         });
     });
@@ -244,28 +266,4 @@ async function startBloop() {
     isBlooped = true;
     isTransitioning = false;
     return true;
-}
-
-function resetBloop() {
-    if (runner) Matter.Runner.stop(runner);
-    if (engine) Matter.Engine.clear(engine);
-
-    if (overlay && overlay.parentNode) {
-        overlay.parentNode.removeChild(overlay);
-        overlay = null;
-    }
-
-    hiddenElements.forEach((el) => {
-        el.style.visibility = "";
-    });
-    hiddenElements = [];
-
-    // Smoothly restore 100% camera zoom
-    const mainArea = document.querySelector(".main-content-area");
-    if (mainArea) {
-        mainArea.classList.remove("bloop-zoomed");
-    }
-
-    isBlooped = false;
-    isTransitioning = false;
 }

@@ -1,10 +1,17 @@
-import { useState } from "react";
-import { Link, NavLink, Outlet } from "react-router";
-import { toggleBloop } from "./utils/bloopPhysics";
+import { useState, useEffect } from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
+import { toggleBloop, resetBloop } from "./utils/bloopPhysics";
 import "./Layout.css";
 
 function Layout() {
     const [isBlooped, setIsBlooped] = useState(false);
+    const location = useLocation();
+
+    // Automatically force Unbloop whenever the user changes pages
+    useEffect(() => {
+        resetBloop();
+        setIsBlooped(false);
+    }, [location.pathname]);
 
     const handleBloop = async () => {
         const active = await toggleBloop();
