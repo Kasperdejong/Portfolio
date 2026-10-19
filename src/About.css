@@ -152,24 +152,25 @@
     }
 }
 
+/* Put the distance/spacing on the container */
 .about-cv-image-container {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 3.5rem;
+    /* Clean distance below the "Mijn CV" title & blob */
+    margin-bottom: 3rem;
+    /* Spacing at the bottom */
 }
 
+/* Keep the image completely clean: zero margins, zero padding */
 .about-cv-image {
     width: 66.666667%;
-    /* w-2/3 */
     border-radius: 0.5rem;
-    /* rounded-lg */
     height: auto;
-    margin-top: 2.5rem;
-    /* mt-10 (40px) */
-    padding-top: 2.5rem;
-    /* pt-10 */
-    margin-bottom: 2.5rem;
-    /* mb-10 */
+    margin: 0;
+    padding: 0;
+    display: block;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
