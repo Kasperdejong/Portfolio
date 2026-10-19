@@ -5,19 +5,22 @@ let runner = null;
 let overlay = null;
 let hiddenElements = [];
 let isBlooped = false;
+let isTransitioning = false;
 
-export function toggleBloop() {
+export async function toggleBloop() {
+    if (isTransitioning) return isBlooped;
+
     if (isBlooped) {
         resetBloop();
         return false;
     } else {
-        startBloop();
-        return true;
+        const started = await startBloop();
+        return started;
     }
 }
 
-function startBloop() {
-    const { Engine, Runner, Bodies, Composite, Mouse, MouseConstraint, Events } = Matter;
+async function startBloop() {
+    isTransitioning = true;
 
     const selectors = [
         ".skill-card",
@@ -32,22 +35,41 @@ function startBloop() {
     ].join(", ");
 
     const allElements = Array.from(document.querySelectorAll(selectors));
-    if (allElements.length === 0) return;
+    if (allElements.length === 0) {
+        isTransitioning = false;
+        return false;
+    }
+
+    // 1. Capture unzoomed natural dimensions before the camera scale
+    const unzoomedSizes = new Map();
+    allElements.forEach((el) => {
+        unzoomedSizes.set(el, {
+            width: el.offsetWidth,
+            height: el.offsetHeight,
+        });
+    });
+
+    // 2. Smoothly scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // 3. Trigger camera zoom to 50%
+    const mainArea = document.querySelector(".main-content-area");
+    if (mainArea) {
+        mainArea.classList.add("bloop-zoomed");
+    }
+
+    // Wait 0.6s for the zoom transition to complete
+    await new Promise((resolve) => setTimeout(resolve, 600));
+
+    const { Engine, Runner, Bodies, Composite, Mouse, MouseConstraint, Events } = Matter;
 
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-    const visibleElements = allElements.filter((el) => {
-        const rect = el.getBoundingClientRect();
-        return rect.bottom > 0 && rect.top < screenHeight && rect.width > 0 && rect.height > 0;
-    });
-
-    const targetElements = visibleElements.length > 0 ? visibleElements : allElements.slice(0, 8);
-
-    // 1. Create sandbox below the navbar (top: 75px)
     const navbar = document.querySelector(".navbar-header");
     const navbarHeight = navbar ? navbar.offsetHeight : 70;
 
+    // 4. Create sandbox overlay
     overlay = document.createElement("div");
     overlay.id = "bloop-sandbox";
     overlay.style.position = "fixed";
@@ -60,7 +82,6 @@ function startBloop() {
     overlay.style.pointerEvents = "auto";
     document.body.appendChild(overlay);
 
-    // 2. Setup Matter Engine
     engine = Engine.create();
     engine.gravity.y = 1.1;
     engine.positionIterations = 10;
@@ -70,26 +91,33 @@ function startBloop() {
     hiddenElements = [];
     const usableHeight = screenHeight - navbarHeight;
 
-    targetElements.forEach((el) => {
+    allElements.forEach((el) => {
         const rect = el.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
 
-        // Clone the element into the sandbox
+        const size = unzoomedSizes.get(el) || { width: rect.width * 2, height: rect.height * 2 };
+
+        // Clone the element with its natural internal size so text layout is preserved
         const clone = el.cloneNode(true);
         clone.style.position = "absolute";
         clone.style.left = "0px";
         clone.style.top = "0px";
-        clone.style.width = `${rect.width}px`;
-        clone.style.height = `${rect.height}px`;
+        clone.style.width = `${size.width}px`;
+        clone.style.height = `${size.height}px`;
         clone.style.margin = "0";
         clone.style.transition = "none";
         clone.style.cursor = "grab";
         clone.style.userSelect = "none";
+        clone.style.transformOrigin = "center center";
 
-        // Offset relative to sandbox top
         const startTop = rect.top - navbarHeight;
-        clone.style.transform = `translate(${rect.left}px, ${startTop}px)`;
+        const centerX = rect.left + rect.width / 2;
+        const centerY = startTop + rect.height / 2;
 
-        // If it's the avatar, append the speech bubble for hover
+        // Position clone centered at 50% scale initially
+        clone.style.transform = `translate3d(${centerX - size.width / 2}px, ${centerY - size.height / 2}px, 0) scale(0.5)`;
+
+        // Avatar hover bubble support
         if (el.classList.contains("profile-avatar-container")) {
             const bubble = document.createElement("img");
             bubble.src = "/Portfolio/overmij_bubbleright.png";
@@ -102,7 +130,7 @@ function startBloop() {
             clone.addEventListener("mouseleave", () => { bubble.style.display = "none"; });
         }
 
-        // Handle clicking links while blooped
+        // Keep links clickable
         const parentLink = el.closest("a");
         if (parentLink) {
             clone.setAttribute("data-href", parentLink.getAttribute("href"));
@@ -113,21 +141,22 @@ function startBloop() {
         el.style.visibility = "hidden";
         hiddenElements.push(el);
 
-        const centerX = rect.left + rect.width / 2;
-        const centerY = startTop + rect.height / 2;
+        // Half-size collision body (50% dimensions)
+        const halfWidth = size.width * 0.5;
+        const halfHeight = size.height * 0.5;
         const isRound = el.classList.contains("profile-avatar-container") || el.classList.contains("contact-link");
 
         let body;
         if (isRound) {
-            body = Bodies.circle(centerX, centerY, rect.width / 2, {
-                restitution: 0.85,
+            body = Bodies.circle(centerX, centerY, halfWidth / 2, {
+                restitution: 0.88,
                 friction: 0.05,
                 density: 0.002,
             });
         } else {
-            body = Bodies.rectangle(centerX, centerY, rect.width, rect.height, {
-                chamfer: { radius: 18 },
-                restitution: 0.8,
+            body = Bodies.rectangle(centerX, centerY, halfWidth, halfHeight, {
+                chamfer: { radius: 10 },
+                restitution: 0.82,
                 friction: 0.08,
                 density: 0.002,
             });
@@ -136,10 +165,12 @@ function startBloop() {
         Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.06);
 
         body.domElement = clone;
+        body.origWidth = size.width;
+        body.origHeight = size.height;
         bodies.push(body);
     });
 
-    // 3. Walls
+    // 5. Boundaries
     const wallThick = 200;
     const wallOpts = { isStatic: true, restitution: 0.85 };
 
@@ -150,10 +181,8 @@ function startBloop() {
 
     Composite.add(engine.world, [...bodies, ground, ceiling, leftWall, rightWall]);
 
-    // 4. Mouse support (with scroll-wheel hijack removed)
+    // 6. Mouse dragging
     const mouse = Mouse.create(overlay);
-    
-    // Unbind Matter's wheel listener so normal scrolling is NOT blocked
     mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
     mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
 
@@ -166,7 +195,6 @@ function startBloop() {
     });
     Composite.add(engine.world, mouseConstraint);
 
-    // Track dragging to distinguish between a toss vs a click on a link
     let dragStartPos = null;
     Events.on(mouseConstraint, "startdrag", (event) => {
         dragStartPos = { x: event.mouse.position.x, y: event.mouse.position.y };
@@ -184,8 +212,7 @@ function startBloop() {
                     event.mouse.position.x - dragStartPos.x,
                     event.mouse.position.y - dragStartPos.y
                 );
-                // If moved less than 5px, it was a click, not a drag!
-                if (dist < 5) {
+                if (dist < 6) {
                     const href = event.body.domElement.getAttribute("data-href");
                     if (href) {
                         resetBloop();
@@ -197,7 +224,7 @@ function startBloop() {
         dragStartPos = null;
     });
 
-    // 5. Physics runner
+    // 7. Physics loop (Locks elements to half size scale(0.5) while bouncing!)
     runner = Runner.create();
     Runner.run(runner, engine);
 
@@ -206,14 +233,17 @@ function startBloop() {
             const { x, y } = body.position;
             const angle = body.angle;
             const el = body.domElement;
-            const width = parseFloat(el.style.width);
-            const height = parseFloat(el.style.height);
+            const origW = body.origWidth;
+            const origH = body.origHeight;
 
-            el.style.transform = `translate(${x - width / 2}px, ${y - height / 2}px) rotate(${angle}rad)`;
+            // Keeps card centered on physics body, rotated, and scaled to 50%
+            el.style.transform = `translate3d(${x - origW / 2}px, ${y - origH / 2}px, 0) rotate(${angle}rad) scale(0.5)`;
         });
     });
 
     isBlooped = true;
+    isTransitioning = false;
+    return true;
 }
 
 function resetBloop() {
@@ -228,7 +258,14 @@ function resetBloop() {
     hiddenElements.forEach((el) => {
         el.style.visibility = "";
     });
-
     hiddenElements = [];
+
+    // Smoothly restore 100% camera zoom
+    const mainArea = document.querySelector(".main-content-area");
+    if (mainArea) {
+        mainArea.classList.remove("bloop-zoomed");
+    }
+
     isBlooped = false;
+    isTransitioning = false;
 }

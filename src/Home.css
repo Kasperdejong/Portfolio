@@ -1,13 +1,10 @@
 /* ==========================================
    HOMEPAGE STYLING
    ========================================== */
-
+/* Remove background from home-header so the full-screen layout background shows through */
 .home-header {
     position: relative;
-    background-image: url('/Portfolio/artsy-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: transparent;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -301,17 +298,16 @@
     margin-bottom: 2rem;
 }
 
-/* Blob 3: Skinny, wide smear covering the text */
 .category-blob-bg {
     position: absolute;
-    top: 50%;
+    top: 110%;
+    /* Your preferred alignment */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 480px;
-    /* Wide enough to cover the words */
+    width: 490px;
     max-width: 90vw;
-    height: 70px;
-    /* Skinny vertical profile */
+    height: 100px;
+    /* Increased from 70px: fatter on top & bottom */
     z-index: 0;
     pointer-events: none;
     opacity: 0.95;

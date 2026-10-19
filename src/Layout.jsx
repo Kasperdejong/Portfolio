@@ -6,8 +6,8 @@ import "./Layout.css";
 function Layout() {
     const [isBlooped, setIsBlooped] = useState(false);
 
-    const handleBloop = () => {
-        const active = toggleBloop();
+    const handleBloop = async () => {
+        const active = await toggleBloop();
         setIsBlooped(active);
     };
 

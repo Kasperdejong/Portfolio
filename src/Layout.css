@@ -5,6 +5,12 @@
 .layout-container {
     margin: 0 auto;
     width: 100%;
+    min-height: 100vh;
+    background-image: url('/Portfolio/artsy-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* ==========================================
@@ -149,14 +155,17 @@
     transform: scale(1.15);
 }
 
-/* Main Content Area */
+/* Smooth camera zoom transition for optimal bloopage */
 .main-content-area {
-    background-image: url('/Portfolio/artsy-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: transparent;
     min-height: calc(100vh - 75px);
     position: relative;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-origin: top center;
+}
+
+.main-content-area.bloop-zoomed {
+    transform: scale(0.5);
 }
 
 /* Responsive Navbar layout for mobile */
