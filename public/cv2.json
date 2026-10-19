@@ -1,0 +1,583 @@
+{
+  "picture": {
+    "hidden": false,
+    "fit": "cover",
+    "url": "https://rxresu.me/api/uploads/019bef8f-f067-752c-a37b-3d64c7630a5d/pictures/1789140932570.jpeg",
+    "size": 120,
+    "rotation": 0,
+    "aspectRatio": 1,
+    "borderRadius": 10,
+    "borderColor": "rgba(0, 0, 0, 0.5)",
+    "borderWidth": 0,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowWidth": 0
+  },
+  "basics": {
+    "name": "Kasper de Jong",
+    "headline": "Creative Developer",
+    "email": "kasperdejong@gmail.com",
+    "phone": "",
+    "location": "Rotterdam, Zuid-Holland",
+    "website": {
+      "url": "https://kasperdejong.github.io/Portfolio/",
+      "label": ""
+    },
+    "customFields": []
+  },
+  "summary": {
+    "title": "Samenvatting",
+    "icon": "",
+    "columns": 1,
+    "hidden": false,
+    "showHeading": true,
+    "keepTogether": false,
+    "startOnNewPage": false,
+    "content": "<p data-resume-whitespace=\"preserve\">Ik ben een student aan de Hogeschool Rotterdam. De opleiding die ik doe is CMGT, Creative Media &amp; Game Technologies. Op het moment ben ik in mijn vierde jaar en wil ik mij meer richten op full-stack en creative development. In een stage zoek ik een plek waar ik genoeg vrijheid krijg om zelfstandig aan een opdracht te kunnen werken. Wel heb ik behoefte aan een technisch begeleider om te helpen, zowel voor school als een verse kijk op de opdracht of eventuele codeer uitdagingen.</p>"
+  },
+  "sections": {
+    "profiles": {
+      "title": "Profielen",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "ev2bbgj8zxdsayqmcr0a4vh2",
+          "hidden": false,
+          "icon": "github",
+          "iconColor": "",
+          "network": "Github",
+          "username": "kasperdejong",
+          "website": {
+            "url": "https://github.com/Kasperdejong",
+            "label": "",
+            "inlineLink": false
+          }
+        },
+        {
+          "id": "clqcmknllpnljzxsnk4v4pp6",
+          "hidden": false,
+          "icon": "linkedin",
+          "iconColor": "",
+          "network": "LinkedIn",
+          "username": "kasper-de-jong",
+          "website": {
+            "url": "https://www.linkedin.com/in/kasper-de-jong/",
+            "label": "",
+            "inlineLink": false
+          }
+        }
+      ]
+    },
+    "experience": {
+      "title": "Werkervaring",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "01a09123-2cff-76d5-8b82-89f137dc9d1e",
+          "hidden": false,
+          "company": "MCW Creative Agency",
+          "position": "Stagiair",
+          "location": "Willebrordusstraat 126, Rotterdam",
+          "period": "September 2025 – February 2026",
+          "dates": {
+            "start": "2025-09",
+            "end": "2026-02",
+            "present": false
+          },
+          "website": {
+            "url": "https://www.linkedin.com/company/mcw-multimedia-experiences/?originalSubdomain=nl",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p data-resume-whitespace=\"preserve\">Tijdens deze stage heb ik enorm veel geleerd op het gebied van programmeren en op een creatieve wijze meerdere ervaringen creëren voor de eindgebruiker. Van de belangrijkste dingen die ik hier heb gedaan was de eerste een touchscreen ervaring over duurzame riolering creëren met behulp van interactieve phidgets voor knoppen en geluiden in Vue. Dit was voor het Hong Kong Science Museum in China. Verder heb ik mij heel erg verdiept in dieptecamera's en uiteindelijk met behulp van een Kinect camera bekeken wat de mogelijkheden waren voor hand en bodytracking in musea ervaringen. Ik heb verder demo's met mediapipe en Python gemaakt voor potentieel leuke ideeën. Een daarvan was het Arm-adillo project waar een armadillo helpt met het leren van gebarentaal. Hier werd nog verder aan gewerkt met een opdrachtgever na mijn vertrek bij de stage. Ook heb ik het bedrijf geholpen in de overstap naar Linux door alle Windows stappen uit te testen en over te zetten in een handleiding voor werken in de Linux Ubuntu omgeving. Dit zou de werktijd heel erg verkorten voor het type werk waar MCW zich mee bezig houdt.</p>",
+          "roles": []
+        },
+        {
+          "id": "tiy4tbvukx3q14jceiik5shz",
+          "hidden": false,
+          "company": "Hogeschool Rotterdam",
+          "position": "Peercoach",
+          "location": "hogeschool Rotterdam, Wijnhaven 99",
+          "period": "September 2024 - Juli 2025",
+          "dates": {
+            "start": null,
+            "end": null,
+            "present": false,
+            "raw": "September 2024 - Juli 2025"
+          },
+          "website": {
+            "url": "https://www.hogeschoolrotterdam.nl/",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p data-resume-whitespace=\"preserve\">Ik kon deze baan doen, doordat ik mijn <strong>propedeuse </strong>heb gehaald in het eerste jaar. Ik geef extra hulp aan de eerstejaars CMGT. Ik help ook bij open dagen en bij sportdagen bijvoorbeeld. Deze baan bevat vooral het helpen met code en het zijn van een vertrouwenspersoon die kan helpen bij de eerstejaars vakken.</p>",
+          "roles": []
+        },
+        {
+          "id": "mrgtve4vz0b91h78fyema17p",
+          "hidden": false,
+          "company": "Swimmin'",
+          "position": "Zwem instructeur",
+          "location": "Westersingel, Ringdijk",
+          "period": "September 2023 – December 2023",
+          "dates": {
+            "start": "2023-09",
+            "end": "2023-12",
+            "present": false
+          },
+          "website": {
+            "url": "https://swimmin.nl/",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p data-resume-whitespace=\"preserve\">Ik gaf tijdens deze baan zwemles aan kinderen van 4-6 jaar. Ik werkte op de Zaterdag van 8:15 tot 14:30. Tijdens deze dagen had ik 8 groepen van een paar kinderen die wij goed de aandacht en tijd gaven om te leren zwemmen. Ik had hierbij leiderschapsvermogen en geduld nodig. Wel was ik nog nieuw in dit type werk dus ik stond altijd met een andere instructeur in het water. </p>",
+          "roles": []
+        }
+      ]
+    },
+    "education": {
+      "title": "Educatie",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "vwbgc5zdtj40h7dh5w7qilwo",
+          "hidden": false,
+          "school": "Hogeschool Rotterdam",
+          "degree": "Voltijd opleiding",
+          "area": "Creative Media & Game Technologies ",
+          "grade": "",
+          "location": "",
+          "period": "September 2023 – Present",
+          "dates": {
+            "start": "2023-09",
+            "end": null,
+            "present": true
+          },
+          "website": {
+            "url": "https://cmgt.hr.nl/",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": ""
+        },
+        {
+          "id": "fr3j7oaj00lineay6h4rk5nd",
+          "hidden": false,
+          "school": "Melanchthon Schiebroek",
+          "degree": "Middelbaar onderwijs",
+          "area": "HAVO",
+          "grade": "8 gemiddeld",
+          "location": "",
+          "period": "2017 – 2022",
+          "dates": {
+            "start": "2017",
+            "end": "2022",
+            "present": false
+          },
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Ik heb mijn HAVO-diploma gehaald met 5 jaar VWO en de opleiding afgemaakt met 1 jaar havo 5.</p>"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projects",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "skills": {
+      "title": "Vaardigheden",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "01a09133-5ca7-7222-bf2b-c3e10d32106a",
+          "hidden": false,
+          "icon": "airplane-tilt",
+          "iconColor": "",
+          "name": "Zelfstandigheid",
+          "proficiency": "",
+          "level": 5,
+          "keywords": []
+        },
+        {
+          "id": "01a09133-feb5-71da-917b-216cf57fdc4d",
+          "hidden": false,
+          "icon": "acorn",
+          "iconColor": "",
+          "name": "Leervermogen",
+          "proficiency": "",
+          "level": 5,
+          "keywords": []
+        },
+        {
+          "id": "dq772shle4548ypah8u0tqzm",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "HTML/CSS",
+          "proficiency": "",
+          "level": 5,
+          "keywords": []
+        },
+        {
+          "id": "t1hyjt6g87fisspcm30mblrl",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "React",
+          "proficiency": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "01a09132-de96-74de-95d9-10452235412c",
+          "hidden": false,
+          "icon": "acorn",
+          "iconColor": "",
+          "name": "Sociaal",
+          "proficiency": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "qaayb1n11qktmrx30v9cc12o",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Javascript",
+          "proficiency": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "01a154fd-9018-706b-be62-503c37eeb04b",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "AI-prompting",
+          "proficiency": "Dit is een van de redenen waarom alles mogelijk is op het gebied van coderen.",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "psdg0o2d4kbsqnidwef6sdvu",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Design",
+          "proficiency": "",
+          "level": 4,
+          "keywords": []
+        },
+        {
+          "id": "m4ui70f53rx0uzcboirj190h",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Express",
+          "proficiency": "",
+          "level": 3,
+          "keywords": []
+        },
+        {
+          "id": "hfnkndfcshqo82glc63rnsrc",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Laravel",
+          "proficiency": "",
+          "level": 3,
+          "keywords": []
+        },
+        {
+          "id": "01a154ff-a552-771e-8bfd-3f2257253f74",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Python",
+          "proficiency": "",
+          "level": 2,
+          "keywords": []
+        },
+        {
+          "id": "01a15500-3d73-72f4-b8a8-fb96e1652378",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "C#",
+          "proficiency": "",
+          "level": 2,
+          "keywords": []
+        },
+        {
+          "id": "01a15501-a5f7-72e8-9e82-3eed760e8231",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Editing software",
+          "proficiency": "",
+          "level": 2,
+          "keywords": []
+        },
+        {
+          "id": "i8yqtisa7magm9r8kgdlqlg7",
+          "hidden": true,
+          "icon": "",
+          "iconColor": "",
+          "name": "Basgitaar",
+          "proficiency": "",
+          "level": 4,
+          "keywords": []
+        }
+      ],
+      "keywordLayout": "inline",
+      "layout": "default"
+    },
+    "languages": {
+      "title": "Talen",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "c8gd9pesb8wn0s7gg74qieft",
+          "hidden": false,
+          "language": "Nederlands",
+          "fluency": "",
+          "level": 5
+        },
+        {
+          "id": "ysur8gimcjw16s1204x5rr20",
+          "hidden": false,
+          "language": "Engels",
+          "fluency": "",
+          "level": 5
+        },
+        {
+          "id": "yeo1tiwnlj2zg7clwfb6czmj",
+          "hidden": false,
+          "language": "Duits",
+          "fluency": "",
+          "level": 3
+        },
+        {
+          "id": "cbquoc24t3bpjlarzbgi3bb3",
+          "hidden": false,
+          "language": "Spaans",
+          "fluency": "",
+          "level": 1
+        }
+      ]
+    },
+    "interests": {
+      "title": "Interesses",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "jdrj57lh35fdfkfcxer5gdxn",
+          "hidden": false,
+          "icon": "",
+          "iconColor": "",
+          "name": "Basgitaar, Boulderen, Muziek, Sport, Games, Kunst en schilderen ",
+          "keywords": []
+        }
+      ]
+    },
+    "awards": {
+      "title": "Awards",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "certifications": {
+      "title": "Certificaten",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "f5elegzhv0qbr3w3tgs6jecj",
+          "hidden": false,
+          "title": "Propedeuse",
+          "issuer": "CMGT, Hogeschool Rotterdam",
+          "date": "2024",
+          "dates": {
+            "start": "2024",
+            "end": null,
+            "present": false
+          },
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": ""
+        },
+        {
+          "id": "u159ffx5qadq9h777qwhn1yp",
+          "hidden": false,
+          "title": "Havo Diploma - Economie & Maatschappij",
+          "issuer": "",
+          "date": "",
+          "dates": {
+            "start": null,
+            "end": null,
+            "present": false
+          },
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": ""
+        }
+      ]
+    },
+    "publications": {
+      "title": "Publications",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "volunteer": {
+      "title": "Volunteering",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "references": {
+      "title": "References",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    }
+  },
+  "customSections": [],
+  "metadata": {
+    "template": "leafish",
+    "layout": {
+      "sidebarWidth": 35,
+      "pages": [
+        {
+          "fullWidth": false,
+          "main": [
+            "summary",
+            "profiles",
+            "experience",
+            "education",
+            "projects",
+            "volunteer",
+            "references"
+          ],
+          "sidebar": [
+            "skills",
+            "interests",
+            "certifications",
+            "awards",
+            "publications",
+            "languages"
+          ]
+        }
+      ]
+    },
+    "page": {
+      "gapX": 4,
+      "gapY": 4,
+      "marginX": 10,
+      "marginY": 8,
+      "format": "a4",
+      "locale": "en-US",
+      "dateFormat": "long",
+      "hideLinkUnderline": false,
+      "hideIcons": false,
+      "hideSectionIcons": true
+    },
+    "design": {
+      "level": {
+        "icon": "star",
+        "type": "circle"
+      },
+      "colors": {
+        "primary": "rgba(31, 110, 115, 1)",
+        "text": "rgba(0, 0, 0, 1)",
+        "background": "rgba(255, 255, 255, 1)"
+      }
+    },
+    "typography": {
+      "body": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "400",
+          "400",
+          "600"
+        ],
+        "fontSize": 9,
+        "lineHeight": 1.35
+      },
+      "heading": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "600"
+        ],
+        "fontSize": 13.5,
+        "lineHeight": 1.5
+      }
+    },
+    "notes": "",
+    "styleRules": []
+  }
+}
